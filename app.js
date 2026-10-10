@@ -4,7 +4,7 @@
 (function(){
 'use strict';
 
-var HOME_TITLE = 'meresophist.xyz — Tyler Miranda';
+var HOME_TITLE = 'meresophist.xyz — Tyler Aragon Miranda';
 var TOTAL = 19;
 
 function $(s){ return document.querySelector(s); }
@@ -642,9 +642,9 @@ function bind(){
 
 /* ---------- palette ---------- */
 var THEMES = [
-  ['papyrus','Papyrus'],['pompeii','Pompeii'],['marble','Marble'],['attic','Attic'],['nocturne','Nocturne']
+  ['jeepney','Jeepney'],['papyrus','Papyrus'],['pompeii','Pompeii'],['marble','Marble'],['attic','Attic'],['nocturne','Nocturne']
 ];
-var THEME_COLORS = { papyrus:'#eceae3', pompeii:'#f3e6d2', marble:'#f4f3ee', attic:'#cf7f42', nocturne:'#121116' };
+var THEME_COLORS = { jeepney:'#f6ead2', papyrus:'#eceae3', pompeii:'#f3e6d2', marble:'#f4f3ee', attic:'#cf7f42', nocturne:'#121116' };
 var themeBtn = $('#theme-btn');
 function themeIndex(){
   var s = null;

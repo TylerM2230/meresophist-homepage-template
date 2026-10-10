@@ -65,14 +65,14 @@ try { vm.runInContext(appJs, ctx, {filename:'app.js'}); } catch(e){ console.erro
 const { TOPICS, GROUPS, PAGES } = vm.runInContext('({ TOPICS, GROUPS, PAGES })', ctx);
 
 console.log('\n== data integrity ==');
-check('TOPICS is an array of 18', Array.isArray(TOPICS) && TOPICS.length === 18);
+check('TOPICS is an array of 21', Array.isArray(TOPICS) && TOPICS.length === 21);
 check('GROUPS is an array of 5', Array.isArray(GROUPS) && GROUPS.length === 5);
 const ids = TOPICS.map(t => t.id);
 const pageKeys = Object.keys(PAGES);
-check('PAGES covers all 18 topic ids', ids.every(id => pageKeys.includes(id)));
+check('PAGES covers all 21 topic ids', ids.every(id => pageKeys.includes(id)));
 check('PAGES has no orphan keys', pageKeys.every(k => ids.includes(k)));
 check('every group topic id exists', GROUPS.every(g => g.topics.every(tid => ids.includes(tid))));
-check('group topic counts sum to 18', GROUPS.reduce((n,g)=>n+g.topics.length,0) === 18);
+check('group topic counts sum to 21', GROUPS.reduce((n,g)=>n+g.topics.length,0) === 21);
 
 /* ---------- link resolution ---------- */
 console.log('\n== link resolution ==');

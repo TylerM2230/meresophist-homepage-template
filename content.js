@@ -7,7 +7,7 @@ const TOPICS = [
   { id:'tabularium', num:'01', nav:'Tabularium', title:'Tabularium', group:'record',
     kicker:'The public record of what I am thinking with right now — the books on the desk, the drafts breathing in the folder, the questions still warm.',
     items:[
-      ['Active','Eighteen living entries across five shelves','#/tabularium'],
+      ['Active','Twenty-one living entries across five shelves','#/tabularium'],
       ['Cadence','Weekly-ish, kept in the open','#/tabularium'],
       ['Legend','Reading · Writing · Studying · Building · the hands at work','#/tabularium'],
       ['Motion','Entries move; the struck rows are the record of the year','#/tabularium'],
@@ -40,7 +40,7 @@ const TOPICS = [
       ['Reading','Borges — Labyrinths','#/literature/labyrinths'],
       ['Rereading','Wallace — Infinite Jest','#/literature/infinite-jest'],
       ['Queued','Sebald — The Rings of Saturn','#/literature'],
-      ['Revisit','Calvino — Invisible Cities','#/authors/calvino'],
+      ['Revisit','Calvino — Invisible Cities','#/literature/calvino'],
       ['Look for','The shape a book takes, and what it does to the body reading','#/literature']
     ]
   },
@@ -54,17 +54,7 @@ const TOPICS = [
       ['Connection','Why phronesis has no translation','#/philosophy/aristotle']
     ]
   },
-  { id:'authors', num:'06', nav:'Authors', title:'Authors', group:'letters',
-    kicker:'An index of the writers I keep in the room — the ones whose way of working changed my hands, and what I carry from each.',
-    items:[
-      ['Borges','Infinity, mirrors, the library as universe','#/authors/borges'],
-      ['Calvino','Lightness, structure, the combinatorial imagination','#/authors/calvino'],
-      ['Pessoa','The self as a cast of characters','#/authors/pessoa'],
-      ['Sebald','Memory with its edges showing','#/authors'],
-      ['Woolf','The sentence that follows a mind','#/authors']
-    ]
-  },
-  { id:'poetry', num:'07', nav:'Poetry', title:'Poetry & Writing', group:'wordpage',
+  { id:'poetry', num:'06', nav:'Poetry', title:'Poetry & Writing', group:'wordpage',
     kicker:'The sentence as a machine and the line as a unit of breath. Craft studied the way one studies a trade — in the hands, daily, until it becomes the body.',
     items:[
       ['Studying','Prosody — meter, stress, breath','#/poetry/prosody'],
@@ -74,7 +64,7 @@ const TOPICS = [
       ['Bearing','Read like a writer — with the ear and the pulse','#/poetry']
     ]
   },
-  { id:'copywriting', num:'08', nav:'Copywriting', title:'Copywriting', group:'wordpage',
+  { id:'copywriting', num:'07', nav:'Copywriting', title:'Copywriting', group:'wordpage',
     kicker:'Persuasion with the record left open on the table. Applied rhetoric, studied as a craft of the heart — moving a person, and still able to look at the sentence afterward.',
     items:[
       ['Building','The swipe file — annotated','#/copywriting/swipe-file'],
@@ -84,7 +74,7 @@ const TOPICS = [
       ['Ethic','Moving without bruising — the hand that opens, not the one that pushes','#/copywriting']
     ]
   },
-  { id:'atelier', num:'09', nav:'Atelier', title:'Atelier', group:'wordpage',
+  { id:'atelier', num:'08', nav:'Atelier', title:'Atelier', group:'wordpage',
     kicker:'Where the reading turns into making: fiction, fragments, and forms that push back. The room where the work is made badly first, and then made again.',
     items:[
       ['Fiction','The Cartographer of Impossible Maps','#/atelier/cartographer'],
@@ -94,7 +84,7 @@ const TOPICS = [
       ['Question','Where does the reading come out?','#/atelier']
     ]
   },
-  { id:'journal', num:'10', nav:'Journal', title:'Journal', group:'wordpage',
+  { id:'journal', num:'09', nav:'Journal', title:'Journal', group:'wordpage',
     kicker:'Occasional essays and fragments. Long when the thought earns its length, short when it only needs a breath.',
     items:[
       ['Oct 2026','On Phronesis','#/journal/on-phronesis'],
@@ -104,7 +94,7 @@ const TOPICS = [
       ['Archive','Everything written, in order','#/journal']
     ]
   },
-  { id:'design', num:'11', nav:'Design', title:'Graphic Design', group:'imagetime',
+  { id:'design', num:'10', nav:'Design', title:'Graphic Design', group:'imagetime',
     kicker:'Visual rhetoric: grids, type, and the case a layout makes to the eye before a single word is read. The page speaking at the speed of the eye.',
     items:[
       ['Reading','Bringhurst — Typographic Style','#/design'],
@@ -114,7 +104,7 @@ const TOPICS = [
       ['Bearing','Hierarchy is ethos — what the page honors first, it honors most','#/design']
     ]
   },
-  { id:'drawing', num:'12', nav:'Drawing', title:'Drawing', group:'imagetime',
+  { id:'drawing', num:'11', nav:'Drawing', title:'Drawing', group:'imagetime',
     kicker:'Slowed looking. The hand as an instrument of attention — the eye and the hand agreeing in real time, and the line as the commitment.',
     items:[
       ['Daily','The sketchbook — dated, uncurated','#/drawing/sketchbook'],
@@ -124,7 +114,7 @@ const TOPICS = [
       ['Fight','Against symbols — the long fight to see what is actually there','#/drawing']
     ]
   },
-  { id:'video', num:'13', nav:'Video', title:'Video Editing', group:'imagetime',
+  { id:'video', num:'12', nav:'Video', title:'Video Editing', group:'imagetime',
     kicker:'Time as a material. The essay with a pulse — the cut as punctuation, the pacing as the breath of a proof.',
     items:[
       ['Planning','Essay film — The Aesthetics of Proof','#/video/essay-film'],
@@ -134,7 +124,7 @@ const TOPICS = [
       ['Bearing','Rhythm before content — the pacing carries it, then the words do','#/video']
     ]
   },
-  { id:'modeling', num:'14', nav:'3D', title:'3D Modeling', group:'imagetime',
+  { id:'modeling', num:'13', nav:'3D', title:'3D Modeling', group:'imagetime',
     kicker:'Thinking in volumes. Geometry with its gloves off — forms you can hold and turn, forms that want to be walked around.',
     items:[
       ['Building','The impossible coastline','#/modeling/impossible-coastline'],
@@ -144,7 +134,7 @@ const TOPICS = [
       ['Scene','A room with the lamp in it','#/modeling']
     ]
   },
-  { id:'games', num:'15', nav:'Games', title:'Game Development', group:'handobject',
+  { id:'games', num:'14', nav:'Games', title:'Game Development', group:'handobject',
     kicker:'Games as thought experiments you can walk around inside. Where the logic and the fiction share a room, and keep each other warm.',
     items:[
       ['Designing','The Forking Path — a design document','#/games/forking-paths'],
@@ -152,6 +142,16 @@ const TOPICS = [
       ['Lineage','Borges — the garden as game','#/literature/labyrinths'],
       ['Note','The rules are the ethics — a win condition is a temperament','#/games'],
       ['Puzzle','Z/12Z as a lock','#/mathematics/number-theory']
+    ]
+  },
+  { id:'programming', num:'15', nav:'Programming', title:'Programming & Computer Science', group:'handobject',
+    kicker:'The machine as a second body of the thought — programs that reason, and the discipline of speaking in systems that hold.',
+    items:[
+      ['Building','This site, hand-rolled — HTML, CSS, and the data held as plain text','#/programming'],
+      ['Studying','Algorithms and data structures, worked slowly and by hand','#/programming'],
+      ['Lineage','Lambda, Turing, and the machines that think in symbols','#/programming'],
+      ['Question','What does a program know that its author does not?','#/programming'],
+      ['Notebook','The command line, the editor, and the small tools that compose','#/programming']
     ]
   },
   { id:'clothes', num:'16', nav:'Clothes', title:'Making Clothes', group:'handobject',
@@ -175,7 +175,7 @@ const TOPICS = [
     ]
   },
   { id:'about', num:'18', nav:'About', title:'About', group:'record',
-    kicker:'Tyler Miranda. Independent student of philosophy, mathematics, literature — and the crafts. This site is the ledger: a life kept in the open, revised as it goes.',
+    kicker:'Tyler Aragon Miranda. Independent student of philosophy, mathematics, literature — and the crafts. This site is the ledger: a life kept in the open, revised as it goes.',
     items:[
       ['Contact','tyler@meresophist.xyz',null],
       ['Elsewhere','Are.na · GitHub · Letterboxd',null],
@@ -183,13 +183,43 @@ const TOPICS = [
       ['Colophon','Instrument Serif & Courier Prime',null],
       ['The name','Meresophist, explained','#/about']
     ]
+  },
+  { id:'psychology', num:'19', nav:'Psychology', title:'Psychology & the Sacred', group:'letters',
+    kicker:'The psyche and the depths — analytical psychology, mysticism, and the shaman\u2019s map of the inner world.',
+    items:[
+      ['Jung','Analytical psychology — the collective unconscious and individuation','#/psychology/jung'],
+      ['Mysticism','The via negativa — a knowing that is not a proposition','#/psychology/mysticism'],
+      ['Shamanism','Ecstasy as technique — the axis mundi and the soul\u2019s flight','#/psychology/shamanism'],
+      ['Question','What does the psyche know that the ego cannot say?','#/psychology'],
+      ['Lineage','Jung · Eliade · Eckhart · the babaylan','#/psychology']
+    ]
+  },
+  { id:'neurotech', num:'20', nav:'Neurotech', title:'Signal & Mind', group:'handobject',
+    kicker:'The brain read as a signal — electroencephalography, brain-computer interfaces, and the analog machines that computed by hand.',
+    items:[
+      ['EEG','Hans Berger\u2019s 1924 recording — the brain\u2019s electric weather','#/neurotech/eeg'],
+      ['Interface','Brain-computer interfaces — thought, translated into action','#/neurotech/brain-computer-interface'],
+      ['Analog','The manual integrator — computing by wheel and disc','#/neurotech/analog-computer'],
+      ['Question','What can the mind say to a machine, and what can it not?','#/neurotech'],
+      ['Robot','Humanoid robots — the body made to walk and work','#/neurotech/humanoid-robots']
+    ]
+  },
+  { id:'metalwork', num:'21', nav:'Metalwork', title:'Metal, Fire & Skin', group:'handobject',
+    kicker:'The made thing in metal and ink — Renaissance armor, precolonial Philippine gold, and the marks worn on the skin.',
+    items:[
+      ['Armory','The Negroli of Milan — parade armor, damascened and raised','#/metalwork/armory'],
+      ['Gold','Precolonial Philippine gold — the Oton mask and lost-wax casting','#/metalwork/philippine-gold'],
+      ['Tattoo','Batok — the pintados, Apo Whang-Od, and the marks that remember','#/metalwork/philippine-tattoo'],
+      ['Question','What does the hand remember that the archive forgets?','#/metalwork'],
+      ['Lineage','Negroli · the Boxer Codex · the babaylan\u2019s ink','#/metalwork']
+    ]
   }
 ];
 
 const GROUPS = [
   { id:'letters', num:'01', title:'Letters',
     line:'The reading room — the ideas, the ways of showing them true, and the lives they arrive carrying. The disciplines that ask, slowly and with feeling, what is true and how to live.',
-    topics:['philosophy','mathematics','literature','languages','authors'] },
+    topics:['philosophy','mathematics','literature','languages','psychology'] },
   { id:'wordpage', num:'02', title:'Word & Page',
     line:'Writing as a craft held in the body: from the first sentence to the sale, from the form that holds to the note that goes out into the world.',
     topics:['poetry','copywriting','atelier','journal'] },
@@ -197,8 +227,8 @@ const GROUPS = [
     line:'Making things visible and keeping them moving — grids, marks, cuts, and volumes, each one a way of letting the eye dwell.',
     topics:['design','drawing','video','modeling'] },
   { id:'handobject', num:'04', title:'Hand & Object',
-    line:'The made thing, and the systems that behave like objects — cloth, metal, and games whose rules have a temperament of their own.',
-    topics:['games','clothes','jewelry'] },
+    line:'The made thing, and the systems that behave like objects — cloth, metal, games whose rules have a temperament, and the machines that think.',
+    topics:['games','programming','neurotech','metalwork','clothes','jewelry'] },
   { id:'record', num:'05', title:'The Record',
     line:'The ledger itself — what is on the desk right now, and the person who keeps it, in the open, as a form of devotion.',
     topics:['tabularium','about'] }
@@ -393,6 +423,99 @@ mathematics:{
         {p:`A scrolling visual essay: each criterion paired with a proof that exemplifies it, set as diagrams rather than prose. Euclid IX.20 for economy; the diagonal argument for surprise; the fundamental theorem of arithmetic for fit.`},
         {fig:{t:'Four criteria, four proofs', n:'Economy, inevitability, surprise, fit — mapped to their proofs — placeholder.'}}
       ]
+    },
+    'set-theory':{
+      title:'Set Theory',
+      kicker:'Every set is an answer; its power set is the next question.',
+      meta:[['Founder','Georg Cantor (1845–1918)'],['Axiomatized','Zermelo 1908 · Fraenkel 1922 — ZFC'],['Key result','CH independent of ZFC (Gödel 1940 · Cohen 1963)']],
+      blocks:[
+        {h:'Cantor and the transfinite'},
+        {p:`Georg Cantor (1845–1918) founded set theory in the 1870s and took the infinite as an object of mathematics. In 1874 he proved the real numbers uncountable while the algebraic numbers are countable. His 1891 diagonal argument showed no list of reals is ever complete. What he called transfinite arithmetic became a theory of infinitely many distinct infinities.`},
+        {kv:[
+          ['set','a collection of distinct objects regarded as a single object'],
+          ['cardinal','the size of a set, answering "how many"'],
+          ['ordinal','the order-type of a well-ordered set, answering "in what order"'],
+          ['countable','admitting a one-to-one correspondence with the naturals'],
+          ['power set','the set of all subsets of a given set'],
+          ['diagonal argument','Cantor\u2019s 1891 proof that no enumeration exhausts the reals'],
+          ['ZFC','Zermelo–Fraenkel set theory with the axiom of choice'],
+          ['axiom of choice','every family of nonempty sets admits a choice function'],
+          ['continuum hypothesis','no cardinal lies strictly between the naturals and the reals'],
+          ['forcing','Cohen\u2019s 1963 method for adjoining generic sets to a model']
+        ]},
+        {h:'The diagonal argument'},
+        {p:`Given any list of real decimals, Cantor builds a number differing from the nth entry at the nth digit. It is therefore not on the list. The reals, uncountable, outnumber the naturals.`},
+        {h:'Power set and Cantor\u2019s theorem'},
+        {p:`The power set P(S) collects every subset of S. Cantor\u2019s theorem proves no map sends S onto P(S), so |S| is strictly less than |P(S)|. Iterating the power set yields an unbounded hierarchy of ever-larger infinities.`},
+        {h:'Russell\u2019s paradox'},
+        {p:`In 1901 Bertrand Russell found naive comprehension inconsistent: take the set of all sets that do not contain themselves. If it contains itself, it must not; if it does not, it must. The paradox (sent to Frege in 1902, published 1903) forced axioms to restrict which predicates form sets.`},
+        {h:'Zermelo–Fraenkel axioms'},
+        {p:`Ernst Zermelo axiomatized set theory in 1908; Abraham Fraenkel (with Thoralf Skolem) added replacement in 1922, yielding ZF. With choice appended it is ZFC — the standard foundation of nearly all mathematics.`},
+        {h:'The continuum hypothesis'},
+        {p:`Cantor conjectured no cardinal lies strictly between the naturals and the reals. Gödel proved CH consistent with ZFC (1938–1940) via the constructible universe; Cohen proved its negation consistent (1963) via forcing. CH is undecidable in ZFC.`},
+        {ul:[
+          {t:'The uncountable', d:'Cantor proved in 1874 that the reals outnumber the naturals.'},
+          {t:'The diagonal', d:'One construction defeats every proposed enumeration of the reals.'},
+          {t:'The hierarchy', d:'Iterating the power set builds an unbounded ladder of infinities.'},
+          {t:'The paradox', d:'Naive comprehension collapses under self-membership.'},
+          {t:'The independence', d:'CH is neither provable nor refutable in ZFC.'}
+        ]},
+        {q:{t:'No one shall expel us from the paradise that Cantor has created for us.', c:'David Hilbert, "Über das Unendliche" (1925)'}},
+        {fig:{t:'The cumulative hierarchy', n:'The von Neumann universe V: the empty set at the base, each level the power set of the previous, ordinals climbing the spine — a tower no set ever tops.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Mathematics', d:'The shelf this note hangs from', r:'#/mathematics'},
+          {t:'Group theory', d:'Symmetry made arithmetic', r:'#/mathematics/group-theory'},
+          {t:'Borges — Labyrinths', d:'The library as a totality', r:'#/literature/labyrinths'},
+          {t:'Philosophy', d:'Foundations and the infinite', r:'#/philosophy'}
+        ]}
+      ]
+    },
+    'group-theory':{
+      title:'Group Theory',
+      kicker:'A group is symmetry made arithmetic.',
+      meta:[['Field','Abstract algebra'],['Progenitor','Évariste Galois (1811–1832)'],['Milepost','Classification of finite simple groups, 2004']],
+      blocks:[
+        {h:'Évariste Galois (1811–1832)'},
+        {p:`Galois, at twenty, wrote the memoir that founded the theory — then died in a duel on 31 May 1832. He showed a polynomial is solvable by radicals only when its group of substitutions is solvable. The word "group" entered mathematics through him; his papers reached print in 1846, edited by Joseph Liouville.`},
+        {h:'Symmetry and the group concept'},
+        {p:`A group axiomatizes symmetry: a set of operations closed under composition, with an identity and inverses. Cayley proved in 1854 that every group embeds in a symmetric group — symmetry is the universal language. The axioms are few; the reach is total.`},
+        {h:'The classification of finite simple groups'},
+        {p:`Finite simple groups are the atoms of finite group theory; every finite group is built from them. The classification, announced by Gorenstein in 1983 and closed by Aschbacher–Smith (2004), yields 18 infinite families and 26 sporadic groups. The Monster, the largest sporadic, has order roughly 8 × 10⁵³.`},
+        {h:'The Rubik\u2019s cube group'},
+        {p:`The cube\u2019s positions form a finite group generated by six face turns. Its order is 43,252,003,274,489,856,000. "God\u2019s number" — the worst-case minimum moves — is 20, proved in 2010.`},
+        {h:'Crystallography and the wallpaper groups'},
+        {p:`A crystal is a group: its symmetries tile space. The plane admits exactly 17 wallpaper groups, proved by Fedorov in 1891; in three dimensions there are 230 space groups. Classification here is a periodic table of matter.`},
+        {h:'Gauge theory and Lie groups'},
+        {p:`Continuous symmetries are Lie groups, named for Sophus Lie. Gauge theory makes symmetry local; the Standard Model runs on SU(3) × SU(2) × U(1), following Yang–Mills (1954). Physics, at bottom, is representation theory.`},
+        {kv:[
+          ['group','a set with an associative operation, identity, and inverses'],
+          ['subgroup','a subset closed under the operation, itself a group'],
+          ['normal subgroup','a subgroup closed under conjugation — the kernel of a homomorphism'],
+          ['quotient group','the group of cosets of a normal subgroup'],
+          ['homomorphism','an operation-preserving map between groups'],
+          ['isomorphism','a bijective homomorphism; equality up to renaming'],
+          ['symmetry group','all symmetries of an object under composition'],
+          ['Lie group','a group that is also a smooth manifold'],
+          ['finite simple group','a nontrivial group with no nontrivial normal subgroup'],
+          ['Cayley\u2019s theorem','every group embeds in a symmetric group']
+        ]},
+        {ul:[
+          {t:'Symmetry is axiomatized', d:'Groups capture what "unchanged under transformation" means.'},
+          {t:'Simple groups are atoms', d:'Every finite group decomposes into simple constituents.'},
+          {t:'Continuity yields Lie groups', d:'Smooth symmetries underpin modern physics.'},
+          {t:'Classification is closure', d:'Enumerating all finite simple groups is a finished feat.'}
+        ]},
+        {q:{t:'Symmetry, as wide or as narrow as you may define its meaning, is one idea by which man through the ages has tried to comprehend and create order, beauty, and perfection.', c:'Hermann Weyl, Symmetry (1952)'}},
+        {fig:{t:'The seventeen wallpaper groups', n:'The plane\u2019s seventeen distinct symmetry types — the two-dimensional crystallographic classification.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Set theory', d:'The ground beneath the structures', r:'#/mathematics/set-theory'},
+          {t:'Mathematics', d:'The shelf', r:'#/mathematics'},
+          {t:'Jewelry', d:'Symmetry cast in metal', r:'#/jewelry'},
+          {t:'Games', d:'The cube as a group', r:'#/games'}
+        ]}
+      ]
     }
   }
 },
@@ -407,14 +530,22 @@ literature:{
     {log:[
       {d:'Oct 2026', t:'Borges — Labyrinths', x:'Infinity, mirrors, and the library as a model of the universe.', r:'#/literature/labyrinths'},
       {d:'Sep 2026', t:'Wallace — Infinite Jest', x:'Second reading. Addiction, entertainment, and the shape of a sentence.', r:'#/literature/infinite-jest'},
-      {d:'Aug 2026', t:'Calvino — Invisible Cities', x:'Read in one sitting, then again slowly.', r:'#/authors/calvino'},
-      {d:'Jul 2026', t:'Pessoa — The Book of Disquiet', x:'Fragments, read out of order, as intended.', r:'#/authors/pessoa'}
+      {d:'Aug 2026', t:'Calvino — Invisible Cities', x:'Read in one sitting, then again slowly.', r:'#/literature/calvino'},
+      {d:'Jul 2026', t:'Pessoa — The Book of Disquiet', x:'Fragments, read out of order, as intended.', r:'#/literature/pessoa'}
     ]},
     {h:'What I look for'},
     {ul:[
       {t:'The shape as a form of meaning', d:'Books where the shape does work the sentences cannot — where the book moves like a body.'},
       {t:'The sentence as a unit of thought', d:'Prose that thinks rather than reports — sentences that feel their way forward.'},
       {t:'The infinite and the small', d:'Borges, Calvino, Sebald: the cosmic held inside the domestic, the infinite kept in a small room.'}
+    ]},
+    {h:'The writers'},
+    {ul:[
+      {t:'Jorge Luis Borges', d:'Infinity as a literary device. The essay disguised as a story, the story disguised as a footnote.', r:'#/literature/borges'},
+      {t:'Italo Calvino', d:'Lightness with structure. Six lectures that are also a poetics.', r:'#/literature/calvino'},
+      {t:'Fernando Pessoa', d:'The self as a cast of characters. Writing as a plurality, not a voice.', r:'#/literature/pessoa'},
+      {t:'W. G. Sebald', d:'The photograph as an unreliable narrator. Memory with its edges showing.'},
+      {t:'Virginia Woolf', d:'The sentence that follows a mind instead of a plot.'}
     ]},
     {fig:{t:'The shelf', n:'What I look for, and where each book sits in it — placeholder.'}},
     {q:{t:'A book is a mirror: if an ape looks into it, an apostle is hardly likely to look out.', c:'G. C. Lichtenberg, via Borges'}}
@@ -457,30 +588,7 @@ literature:{
         {p:`I still cannot decide whether the novel\u2019s sincerity is earned or asserted. That question is, I suspect, the novel.`},
         {fig:{t:'The apparatus', n:'Main text and footnotes, and how they interleave — placeholder for a structure map.'}}
       ]
-    }
-  }
-},
-
-/* ---------- AUTHORS ---------- */
-authors:{
-  num:'06', title:'Authors',
-  kicker:'An index of the writers I keep in the room — and what I take from each.',
-  meta:[['Indexed','5 authors'],['Pages','3 open'],['Updated','Oct 2026']],
-  blocks:[
-    {h:'The index'},
-    {p:`Not a list of favourites. A list of writers whose way of working has changed how I work. Each entry answers one question: what did this person make possible that I could not do before?`},
-    {ul:[
-      {t:'Jorge Luis Borges', d:'Infinity as a literary device. The essay disguised as a story, the story disguised as a footnote.', r:'#/authors/borges'},
-      {t:'Italo Calvino', d:'Lightness with structure. Six lectures that are also a poetics.', r:'#/authors/calvino'},
-      {t:'Fernando Pessoa', d:'The self as a cast of characters. Writing as a plurality, not a voice.', r:'#/authors/pessoa'},
-      {t:'W. G. Sebald', d:'The photograph as an unreliable narrator. Memory with its edges showing.'},
-      {t:'Virginia Woolf', d:'The sentence that follows a mind instead of a plot.'}
-    ]},
-    {fig:{t:'The room', n:'The writers, and what each one made possible — placeholder.'}},
-    {h:'Cross-references'},
-    {p:`Author pages connect to the reading log. If an author has no page here, they are either new to me or I have not yet worked out what to say.`, r:'#/literature'}
-  ],
-  children:{
+    },
     borges:{
       title:'Jorge Luis Borges',
       kicker:'Infinity as a literary device; the library as a cosmology.',
@@ -531,6 +639,527 @@ authors:{
       ]
     }
   }
+},
+
+/* ---------- NEUROTECH ---------- */
+neurotech:{
+  num:'20', title:'Signal & Mind',
+  kicker:'The brain read as a signal — electroencephalography, brain-computer interfaces, and the analog machines that computed by hand.',
+  meta:[['Focus','Signals · interfaces · embodiment'],['Anchors','Berger · Bush · Vidal'],['Question','What can the mind say to a machine, and what can it not?']],
+  blocks:[
+    {h:'The territory'},
+    {p:`This shelf reads the mind as a signal and the machine as a body of the thought: the electric brain, the interface that translates intention, the analog machines that computed by contact before the bit, and the humanoid body built to walk and work.`},
+    {ul:[
+      {t:'EEG', d:'Hans Berger\u2019s 1924 recording — the brain\u2019s electric weather.', r:'#/neurotech/eeg'},
+      {t:'Brain-computer interface', d:'Thought, translated into action.', r:'#/neurotech/brain-computer-interface'},
+      {t:'The analog computer', d:'The manual integrator — computing by wheel and disc.', r:'#/neurotech/analog-computer'},
+      {t:'Humanoid robots', d:'The body made to walk and work.', r:'#/neurotech/humanoid-robots'}
+    ]},
+    {fig:{t:'The loop', n:'Brain to signal to machine to action — a circuit with a person in it. Placeholder.'}}
+  ],
+  children:{
+    eeg:{
+      title:'EEG',
+      kicker:'Voltage at the scalp, thought at a distance — the brain read as weather.',
+      meta:[['First recording','Hans Berger, 6 July 1924; published 1929'],['Named rhythms','Alpha and beta (Berger); delta, theta, gamma after'],['Trade-off','Milliseconds in time, centimetres in space']],
+      blocks:[
+        {h:'Hans Berger and the electric brain'},
+        {p:`On 6 July 1924 Hans Berger (1873–1941), a psychiatrist at Jena, recorded the first human electroencephalogram — from the scalp of an 18-year-old patient, Carl Seidel. He named it the Elektrenkephalogramm and published in 1929. He was not first to find the cortex electric: Richard Caton read electrical activity from exposed animal brains in 1875. Berger\u2019s claim was bolder — that the signal crossed the skull intact, and changed with the mind\u2019s state.`},
+        {h:'The rhythms'},
+        {p:`Berger named the first two rhythms he saw, then watched one of them die every time his subject opened his eyes. The later bands complete the spectrum, each with its own weather.`},
+        {kv:[
+          ['alpha','8–13 Hz — relaxed wakefulness, eyes closed; Berger\u2019s first rhythm'],
+          ['beta','13–30 Hz — alert attention, open eyes, active thought'],
+          ['theta','4–8 Hz — drowsiness and early sleep, the mind between'],
+          ['delta','0.5–4 Hz — deep sleep (N3); the slowest, largest waves'],
+          ['gamma','30–100 Hz — fast and local; perception and binding'],
+          ['10–20 system','Jasper\u2019s 1958 map: electrodes at 10% and 20% of skull landmarks'],
+          ['ERP','event-related potential — the brain\u2019s time-locked answer, averaged out of noise'],
+          ['P300','a positive wave ~300 ms after a rare, significant stimulus (Sutton et al., 1965)']
+        ]},
+        {h:'Event-related potentials'},
+        {p:`A single stimulus vanishes into background noise; the answer appears only when many trials are averaged. The P300 (Sutton et al., 1965) marks the moment the brain notices something rare and significant. The N400 (Kutas and Hillyard, 1980) marks a word that does not fit. ERPs turn the EEG from a weather report into a clock — they say when, not only where.`},
+        {h:'Clinical use'},
+        {p:`EEG earned its keep in the clinic before it earned a theory. In epilepsy it catches the interictal spike and the 3 Hz spike-and-wave of absence seizures, and localizes the focus. In sleep it stages the night — delta for deep sleep, spindles and K-complexes for stage N2. Diffuse slowing reads encephalopathy; flat silence reads brain death.`},
+        {ul:[
+          {t:'Alpha fades the instant the eyes open', d:'The first proof the mind was visible.'},
+          {t:'Every source is smeared', d:'Through skull and scalp before it reaches the electrode.'},
+          {t:'The inverse problem is ill-posed', d:'Many brains produce one scalp map.'},
+          {t:'EEG keeps the clock, surrenders the map', d:'Milliseconds, not millimetres.'}
+        ]},
+        {q:{t:'Already during my later years at the Gymnasium I formed the plan of investigating the relations between the objective activity of the brain and the subjective psychic phenomena.', c:'Hans Berger, Über das Elektrenkephalogramm des Menschen (1929), trans.'}},
+        {fig:{t:'The 10–20 map', n:'Twenty-one electrodes fixed by skull landmarks — each named for lobe and hemisphere, the brain\u2019s fixed geography.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Brain-computer interface', d:'The signal, put to work', r:'#/neurotech/brain-computer-interface'},
+          {t:'The analog computer', d:'Signal before the bit', r:'#/neurotech/analog-computer'},
+          {t:'Jung', d:'The psyche beneath the voltage', r:'#/psychology/jung'}
+        ]}
+      ]
+    },
+    'brain-computer-interface':{
+      title:'Brain-Computer Interface',
+      kicker:'Thought, translated into action — the shortest wire from intention to effect.',
+      meta:[['Term','"Brain-computer communication," Jacques Vidal, 1973'],['First spellers','P300 (Farwell & Donchin, 1988); SSVEP (Middendorf et al., 2000)'],['First Utah array in a human','BrainGate, 2004']],
+      blocks:[
+        {h:'Invasive and non-invasive'},
+        {p:`A brain-computer interface reads intention and routes it past the body\u2019s broken wires. Non-invasive systems read from the scalp — safe, but smeared and slow. Invasive systems plant electrodes on or in the cortex — high fidelity, high risk. The gap between the two is the whole field: comfort versus signal.`},
+        {kv:[
+          ['motor imagery','imagining a movement drops mu/beta power over sensorimotor cortex'],
+          ['ERD / ERS','desynchronization and synchronization — the power drop and rise that encode intent'],
+          ['SSVEP','steady-state visual evoked potential; the brain echoes a flicker, gaze selects'],
+          ['P300 speller','Farwell & Donchin, 1988 — the oddball response picks letters from a matrix'],
+          ['Utah array','Normann\u2019s 1991 silicon array; ~96 electrodes on a millimetre-square base'],
+          ['Neuralink N1','1,024 electrodes on 64 threads, set by the R1 robot; first human January 2024'],
+          ['BrainGate','first Utah-array implant in a human, 2004; cursor and robotic-arm control'],
+          ['locked-in state','awake and aware, without voluntary movement — the BCI\u2019s defining audience']
+        ]},
+        {h:'Spelling for the locked-in'},
+        {p:`For a person with ALS in the completely locked-in state, a BCI is the only door left. In 2022 a man who could move no muscle — not even his eyes — spelled sentences by modulating the firing of neurons recorded from implanted arrays, guided by nothing but the pitch of auditory feedback (Chaudhary et al., Nature Communications, 2022).`},
+        {ul:[
+          {t:'The P300 speller is slow and exact', d:'About two characters a minute, no muscle required.'},
+          {t:'Motor imagery needs no stimulus', d:'Only the intention to move what no longer moves.'},
+          {t:'Implanted electrodes fight the tissue', d:'Gliosis slowly mutes the signal they were set to read.'},
+          {t:'The freest channel is none at all', d:'Decode from thought alone.'}
+        ]},
+        {q:{t:'I love my cool son.', c:'A man with ALS, completely locked-in, spelling through implanted microelectrode arrays (Chaudhary et al., 2022)'}},
+        {h:'Prosthetics and the frontier'},
+        {p:`The same decode that moves a cursor moves an arm. BrainGate\u2019s participants reached and grasped with a robotic limb driven by motor cortex. Neuralink\u2019s N1 pushes the electrode count past a thousand. The frontier is no longer reading the brain — it is doing so durably, for decades, without the tissue closing over.`},
+        {h:'What the signal owes'},
+        {p:`A BCI reads what was once private. It raises the question of consent for those who can only say yes through the machine; of agency when a device acts on decoded intent; of data that is not behaviour but the shadow of thought. Cognitive liberty — the right to keep one\u2019s own neural life one\u2019s own — is the old question of the self, moved one wire closer.`},
+        {fig:{t:'The loop', n:'Intention to electrodes, electrodes to decoder, decoder to action, action back to intention — a closed circuit with a person in it.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'EEG', d:'The signal the interface reads', r:'#/neurotech/eeg'},
+          {t:'The analog computer', d:'The machine before the bit', r:'#/neurotech/analog-computer'},
+          {t:'Programming', d:'The decoder, written by hand', r:'#/programming'}
+        ]}
+      ]
+    },
+    'analog-computer':{
+      title:'The Analog Computer & the Manual Integrator',
+      kicker:'The analog computer does not symbolize an integral — it embodies one.',
+      meta:[['Instrument','Mechanical integrator'],['Lineage','James Thomson 1876 → Kelvin 1872–76 → Bush 1931'],['Displaced','By digital computers, 1950s–60s']],
+      blocks:[
+        {h:'The mechanical integrator'},
+        {p:`James Thomson, Kelvin\u2019s elder brother, published the integrating machine in 1876: a disc, a ball, and a cylinder whose rolling contact turns the integral of a function into a rotation. It realized the fundamental theorem of calculus in brass — no arithmetic, only contact and motion. Kelvin adopted the same principle for his harmonic analyzer of 1876.`},
+        {h:'Kelvin\u2019s tide predictor'},
+        {p:`Kelvin conceived the first tide-predicting machine, built 1872–73 to sum ten harmonic constituents; it plotted a year\u2019s tides for a port in about four hours. The U.S. Coast & Geodetic Survey\u2019s machine No. 2, completed 1912, was nicknamed "Old Brass Brains" and served until 1965.`},
+        {h:'Bush\u2019s differential analyzer'},
+        {p:`Harold Hazen and Vannevar Bush assembled the first practical general-purpose differential analyzer at MIT, 1928–31: six wheel-and-disc integrators linked by shafts and gears. A torque amplifier relayed the weak integrator outputs without slip, and the machine\u2019s wiring was the equation.`},
+        {h:'The manual integrator'},
+        {p:`"Manual integrator" names the hand-cranked mechanical instrument that evaluates integrals and differential equations by tracing or turning. Its ancestor is the planimeter: Amsler\u2019s polar planimeter of 1854 measured a closed curve\u2019s area by rolling a wheel along its perimeter. From area to integral was one conceptual step, taken by Thomson in 1876.`},
+        {h:'Why digital displaced analog'},
+        {p:`Analog computes continuously and in parallel, but its precision is capped by machining, friction, and noise. Each new problem meant re-rigging the shafts; digital merely loads a program. Digital precision scales by adding bits, not by grinding finer brass, so the stored-program computers that followed ENIAC (1945) superseded the analyzers by the 1960s.`},
+        {kv:[
+          ['planimeter','measures a closed curve\u2019s area by tracing its perimeter; Amsler\u2019s polar planimeter (1854)'],
+          ['mechanical integrator','yields an integral by physical rolling contact'],
+          ['ball-and-disk integrator','a ball between a disk and a cylinder; distance sets the integrand, spin accumulates the integral'],
+          ['harmonic analyzer','Thomson–Kelvin machine (1876) computing Fourier coefficients by rolling integration'],
+          ['Kelvin\u2019s tide-predicting machine','wire-and-pulley summer of harmonic constituents; first built 1872–73'],
+          ['differential analyzer','general-purpose analog equation solver of interconnected integrators; Bush and Hazen\u2019s MIT machine (1931)'],
+          ['torque amplifier','friction relay reproducing a weak integrator output at usable power without slipping'],
+          ['integraph','traces the integral curve of a given curve line by line (Abdank-Abakanowicz, 1880s)'],
+          ['analog vs digital','analog represents a value continuously; digital represents it as discrete symbols'],
+          ['operational amplifier','high-gain amplifier with feedback; building block of electronic analog computers (Ragazzini et al., 1947)']
+        ]},
+        {ul:[
+          {t:'Integration is physical', d:'Rolling contact turns area into rotation — a working model of the integral.'},
+          {t:'Continuity is the point', d:'An analog computer solves in continuous time and in parallel.'},
+          {t:'Summation is mechanism', d:'Kelvin summed sinusoids with pulleys and a taut wire.'},
+          {t:'The equation is the wiring', d:'Bush interconnected integrators as the equation dictates.'},
+          {t:'Precision is the ceiling', d:'Machining and friction cap accuracy — why digital won.'}
+        ]},
+        {q:{t:'The object of this machine is to substitute brass for brain in the great mechanical labour of calculating the elementary constituents of the whole tidal rise and fall.', c:'William Thomson, Lord Kelvin, on the tide-predicting machine (c. 1876)'}},
+        {fig:{t:'"Old Brass Brains"', n:'U.S. Coast & Geodetic Survey Tide-Predicting Machine No. 2, completed 1912 and retired 1965 — Kelvin\u2019s "brass for brain" made literal.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'EEG', d:'The signal before the bit', r:'#/neurotech/eeg'},
+          {t:'Mathematics', d:'The integral, made brass', r:'#/mathematics'},
+          {t:'Programming', d:'The stored program that replaced it', r:'#/programming'}
+        ]}
+      ]
+    },
+    'humanoid-robots':{
+      title:'Humanoid Robots',
+      kicker:'The humanoid is the body re-posed as a problem: what is it to stand, to work, to be looked at?',
+      meta:[['First full-scale','WABOT-1, Waseda (Ichiro Kato), 1973 — begun 1970'],['Theory anchors','Zero-moment point (Vukobratović, 1968); uncanny valley (Mori, 1970)'],['Open question','Whether the humanoid becomes labor, not spectacle']],
+      blocks:[
+        {h:'To fall forward'},
+        {p:`WABOT-1, built in Ichiro Kato\u2019s laboratory at Waseda University, became the first full-scale humanoid in 1973 — the WABOT project having begun in 1970. Honda\u2019s ASIMO (2000) made bipedal walking a public spectacle; Boston Dynamics\u2019 Atlas (2013) turned it into parkour; Tesla\u2019s Optimus (announced 2021) repositions it as a labor platform. Two theories predate the machines: Miomir Vukobratović\u2019s zero-moment point (1968) mathematized balance, and Masahiro Mori\u2019s uncanny valley (1970) mathematized revulsion. Hanson Robotics\u2019 Sophia (2016) built the face; whether the body follows into the labor market remains open.`},
+        {kv:[
+          ['uncanny valley','Mori\u2019s 1970 dip in affinity as an artifact nears human likeness — near-resemblance reads as corpse'],
+          ['bipedal locomotion','walking on two legs, won by controlling where the body is about to fall'],
+          ['zero-moment point','the ground point where inertial and gravity forces yield zero moment; held inside the support polygon, it keeps a walker upright'],
+          ['WABOT-1','Waseda\u2019s 1973 machine, the first full-scale humanoid — it walked, gripped, and conversed in Japanese'],
+          ['ASIMO','Honda\u2019s 2000 humanoid that brought stable bipedal walking to the stage; retired in 2022'],
+          ['Atlas','Boston Dynamics\u2019 humanoid (2013– ) whose parkour and backflips set the ceiling for dynamic balance'],
+          ['Optimus','Tesla\u2019s general-purpose humanoid, announced 2021, pitched as a factory-and-home labor platform'],
+          ['embodied AI','intelligence that lives in a body and learns through physical interaction rather than data alone'],
+          ['degrees of freedom','the count of independent joint axes; more DOF means more humanlike motion and more control burden'],
+          ['whole-body control','coordinating every joint at once to balance, walk, and grasp, rather than scripting each limb']
+        ]},
+        {ul:[
+          {t:'The double', d:'Mori\u2019s valley marks where resemblance tips into revulsion — the robot as uncanny twin.'},
+          {t:'Walking as controlled falling', d:'Bipedal stance is a permanent near-fall; the zero-moment point keeps it from toppling.'},
+          {t:'The labor question', d:'Humanoids fit human-shaped infrastructure, so their fate is an argument about work, not engineering.'},
+          {t:'The body as datum', d:'Embodied AI claims cognition needs a body; the humanoid is that claim made testable.'}
+        ]},
+        {q:{t:'I have noticed that, as robots appear more humanlike, our sense of their familiarity increases until we come to a valley. I call this relation the "uncanny valley."', c:'Masahiro Mori, "The Uncanny Valley" (1970), trans. MacDorman & Minato (2005)'}},
+        {fig:{t:'The double, measured', n:'Mori\u2019s curve: affinity × human likeness, climbing then plunging at the valley — WABOT-1, ASIMO, Sophia, and Atlas marked along the slope, with the zero-moment point held inside the support polygon.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Brain-computer interface', d:'The mind, read into the machine', r:'#/neurotech/brain-computer-interface'},
+          {t:'Programming', d:'The whole-body controller, written', r:'#/programming'},
+          {t:'Philosophy', d:'The self, re-posed as a problem', r:'#/philosophy'}
+        ]}
+      ]
+    }
+  }
+},
+
+/* ---------- METALWORK ---------- */
+metalwork:{
+  num:'21', title:'Metal, Fire & Skin',
+  kicker:'The made thing in metal and ink — Renaissance armor, precolonial Philippine gold, and the marks worn on the skin.',
+  meta:[['Focus','Metal · fire · the marked body'],['Anchors','Negroli · the Boxer Codex · Whang-Od'],['Question','What does the hand remember that the archive forgets?']],
+  blocks:[
+    {h:'The territory'},
+    {p:`This shelf holds the crafts that shape metal and mark the body: the tempered steel of the Milanese armory, the lost-wax gold of the precolonial Philippines, and the hand-tapped ink of the Kalinga. Heat, hammer, file, fire — and skin as archive.`},
+    {ul:[
+      {t:'The Negroli of Milan', d:'Parade armor, damascened and raised.', r:'#/metalwork/armory'},
+      {t:'The forge, plain', d:'A primer — iron into steel, quench and temper.', r:'#/metalwork/craft'},
+      {t:'Philippine precolonial gold', d:'The Oton mask and lost-wax casting.', r:'#/metalwork/philippine-gold'},
+      {t:'Philippine tattoo', d:'The pintados, Apo Whang-Od, and the marks that remember.', r:'#/metalwork/philippine-tattoo'}
+    ]},
+    {fig:{t:'The made and the marked', n:'Steel, gold, and ink as one craft — the body and the object both as records. Placeholder.'}}
+  ],
+  children:{
+    armory:{
+      title:'The Negroli of Milan',
+      kicker:'One armory turned tempered steel into antique myth. Milan, c. 1496–1600.',
+      meta:[['Subject','Metalwork'],['Milan','16th c.'],['Sources','Pyhrr & Godoy (Met, 1998); Williams (Met Journal, 1999)']],
+      blocks:[
+        {h:'The arsenal city'},
+        {p:`Milan, not Florence, armed the Renaissance. A "Street of the Sword-smiths," via Spadari, is on record by 1066. Two centuries on, Bonvesin de la Riva counted "a marvelous number of armorers" turning out every type of arm, all of it "tempered and polished steel, brighter than a mirror." The Negroli inherited that trade and made it sculpture.`},
+        {p:`Two family botteghe worked the city. The famous line ran from Bernardino Negroli — exporting "white" harness as early as 1513 — down to the sons of Gian Giacomo, who kept the books while his boys signed the steel.`},
+        {h:'The family'},
+        {kv:[
+          ['Filippo Negroli','c. 1510–1579; master embosser; the house virtuoso (Vasari names him)'],
+          ['Gian Giacomo Negroli','d. 1543; father and workshop head, never listed as an armorer'],
+          ['Giovan Battista Negroli','c. 1511–1591; the hammer man who shaped plate'],
+          ['Francesco Negroli','c. 1522–1600; damascener; gilder to Charles V by 1542'],
+          ['Alessandro Negroli','b. c. 1528; eleven at the 1539 garniture, too young to sign'],
+          ['Giovan Paolo Negroli','cousin, the Ello branch; made the Savoy equestrian armor, Turin'],
+          ['Bernardino Negroli','ancestor; exporting "white" armor from 1513'],
+          ['House mark','"N I" under a crown and compass; or crossed keys under a crown']
+        ]},
+        {h:'The technique'},
+        {p:`Parade armor was not for fighting. Repoussé raised the form from the inside with the hammer; chasing worked the front with punches; chiseling cut steel away to deepen relief. The blows thinned and stressed the plate, so an embossed helmet caught a blade rather than turning it. These were pageantry — worn to be seen, never to be hit.`},
+        {p:`Surfaces were finished, never left bare. Heat-bluing and blackening made the "bronzed" ground the inventories name; fire-gilding fused a mercury-and-gold amalgam; damascening — agemina, azzimina, tausia, all Arabic-rooted — inlaid gold and silver wire into steel crosshatched with the file.`},
+        {p:`Steel, not iron, is the point. Iron is soft and forgiving; steel is iron hardened with carbon, and it fights back. Metallography finds the Negroli worked low-to-medium-carbon steel, and Filippo\u2019s best in the hardest of it. Quench hardens; temper takes the brittleness back.`},
+        {h:'Patrons'},
+        {ul:[
+          {t:'Charles V (1500–1558)', d:'Helmet and shield 1533; the Masks Garniture 1539; the Medusa shield 1541; a last burgonet 1545.'},
+          {t:'Federico II Gonzaga', d:'His praise of the Urbino helmet, November 1532, first sold Charles V on the Negroli.'},
+          {t:'Francesco Maria I della Rovere', d:'The 1532 helmet modeled as a human head.'},
+          {t:'Guidobaldo II della Rovere', d:'The so-called Fame Armor, its winged breastplate embossed.'},
+          {t:'Emanuele Filiberto of Savoy', d:'Giovan Paolo\u2019s equestrian harness, Turin.'}
+        ]},
+        {h:'The signed works'},
+        {p:`Eight signed works carry Filippo\u2019s name. The earliest, 1532, is a helmet cast as a curling-haired human head for Urbino, now Vienna. The 1533 helmet and lion shield for Charles V fixed the genre — a classical head, gilt hair, the emperor\u2019s Plus Ultra and the Golden Fleece at the rim.`},
+        {q:{t:'PHILIPPVS·NEGROLVS·MEDIOLAN·FACIEBAT·M·D·XXX·III — Filippo Negroli of Milan made [this], 1533.', c:'Die-punched on the neck lame of the 1533 helmet (Real Armería, Madrid)'}},
+        {fig:{t:'Burgonet, 1543', n:'Filippo Negroli (Metropolitan Museum of Art, 17.190.1720). A siren rides the comb head-down, hands in the hair of a Medusa over the peak; acanthus scrolls coil to winged putti. Steel burnished to imitate bronze.'}},
+        {p:`The Metropolitan\u2019s burgonet of 1543 is arguably the family\u2019s masterpiece: siren on the comb, Medusa at the peak, tendrils coiling to winged putti, steel burnished to read as bronze. Filippo signed it alone — PHILIPP·NEGROLV·FECIT. It passed through Brocas, the dukes of Luynes, and J. Pierpont Morgan before the Met in 1917.`},
+        {p:`The signed record ends in 1545. Francesco sold his share and left for the imperial court; the shop worked on to 1551, the name to 1600. What survived is a small, astonishing body — armor that never entered a battle, and never needed to.`},
+        {h:'Connections'},
+        {ul:[
+          {t:'The forge, plain', d:'The craft behind the steel', r:'#/metalwork/craft'},
+          {t:'Jewelry', d:'Damascene and the small metal', r:'#/jewelry'},
+          {t:'Drawing', d:'The repoussé raised like a line', r:'#/drawing'}
+        ]}
+      ]
+    },
+    craft:{
+      title:'The Forge, Plain',
+      kicker:'A primer on the metalworker\u2019s craft — the same fire, hammer, and file behind every page this site makes.',
+      meta:[['Subject','Metalwork'],['Technique','Primer'],['Cross-refs','Jewelry · gold · clothes · drawing']],
+      blocks:[
+        {h:'Iron into steel'},
+        {p:`Iron is the base metal; steel is iron plus carbon — the difference between a soft bar and an edge that cuts and springs back. Everything downstream, from a Negroli parade head to a bezel or a blade, begins with getting that carbon content and the heat right.`},
+        {p:`Forging shapes by hammer while the metal is hot and plastic: every blow moves material and refines the grain. Annealing is the pause that makes further work possible — heat and cool slowly, and the metal softens, the stress leaves, and the next course of blows will not crack it.`},
+        {h:'Hardening and tempering'},
+        {kv:[
+          ['forge','the hearth: charcoal or coal, air blast through the tuyere, heat enough to make steel glow'],
+          ['hammer','the primary tool: weight and face do the shaping; planishing lays the final light blows'],
+          ['file','the cutter: it removes, smooths, and crosshatches the ground a damascener inlays'],
+          ['anneal','heat, then cool slowly: soften, relieve stress, restore ductility'],
+          ['harden','heat to critical (cherry red), then quench in water, brine, or oil: hard but brittle'],
+          ['temper','reheat low and let down: trade hardness for toughness; the oxide runs straw to blue'],
+          ['patina','a controlled oxide skin: the blues and blacks Italian inventories called "bronzed"']
+        ]},
+        {h:'The order of operations'},
+        {ul:[
+          {t:'Heat first, strike second', d:'Work only while the metal is plastic.'},
+          {t:'Anneal before you overwork', d:'Brittle metal is the smith\u2019s error, not the metal\u2019s.'},
+          {t:'Quench to harden, temper to live', d:'Hard alone shatters.'},
+          {t:'Finish is not paint', d:'Bluing, blackening, damascene are surface, inlay, and oxide — fused or cut into the steel.'}
+        ]},
+        {h:'The file and the surface'},
+        {p:`The file is the most patient tool in the shop. It takes the hammer\u2019s rough truth down to a plane; crosshatched fine, it is exactly the ground a damascener needs, the burred scratches gripping gold or silver wire burnished flush or left proud. Damascening is inlay, not paint; it survives where gilding wears.`},
+        {p:`Patina is time made visible and controlled. Heat-bluing is a thin oxide film whose thickness — straw, brown, purple, blue — is the smith\u2019s thermometer. The Negroli heat-blued or blackened their embossed steel; inventories called the result "bronzed." The metal is not colored; its skin is grown.`},
+        {h:'Where this belongs here'},
+        {p:`This page sits beside the site\u2019s own making. The gold of the Philippine page, the bezels and wire of the jewelry page, the armature of a garment, the line of a drawing — all obey the same few laws: heat, hammer, file, fire. The tabularium is itself a forge, run colder, of language.`},
+        {q:{t:'…every type of arm … and all are of tempered and polished steel, brighter than a mirror.', c:'Bonvesin de la Riva, On the Marvels of Milan (1288)'}},
+        {fig:{t:'The smith\u2019s kit', n:'Hammer, file, anvil, quenching trough, and the temper-color scale — straw to blue. Schematic.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'The Negroli of Milan', d:'The craft at its apex', r:'#/metalwork/armory'},
+          {t:'Philippine gold', d:'The same fire, a different metal', r:'#/metalwork/philippine-gold'},
+          {t:'Jewelry', d:'The small metal, worked', r:'#/jewelry'}
+        ]}
+      ]
+    },
+    'philippine-gold':{
+      title:'Philippine Precolonial Gold',
+      kicker:'Gold was the body\u2019s second skin — currency, rank, and fare for the dead.',
+      meta:[['Period','c. 900–1521'],['Medium','Gold (bulawan)'],['Region','Visayas & Mindanao']],
+      blocks:[
+        {h:'The metal the dead refused to leave behind'},
+        {p:`Before coins or colonizers, the archipelago weighed worth in bulawan. Gold was at once money, ornament, rank, and passage-fare into the afterlife. A 1586 Spanish account marveled that Luzon taught its children gold-weights before letters. The record survives as masks, chains, bead-coin, and the name of a legacy: Gintong Pamana — "golden heritage."`},
+        {kv:[
+          ['Oton death mask','late 14th–early 15th c.; excavated 1973 at Katagman, Oton, Iloilo'],
+          ['Material','thin beaten gold sheet; repoussage and chasing'],
+          ['Dimensions','13.09 g; eye cover 13.3 cm, nose piece 16.3 cm'],
+          ['Status','National Cultural Treasure; first gold death mask recovered in situ'],
+          ['Surigao treasure','found 1981 by Berto Morales, Sitio Magroyong, Surigao del Sur'],
+          ['Dating','c. 10th–13th century'],
+          ['Butuan','Agusan River entrepôt; balanghai boats to c. 320 CE; tribute to Song China, 1001'],
+          ['Piloncitos','bead-like gold currency, 9th–12th c.; 0.09–2.65 g each'],
+          ['Method','lost-wax casting (cire perdue)']
+        ]},
+        {h:'What the gold was for'},
+        {ul:[
+          {t:'Coin', d:'Piloncitos, some stamped with a Baybayin "Ma" (ᜋ).'},
+          {t:'Body', d:'Chains, kamagi necklaces, sashes, ear and tooth ornament.'},
+          {t:'Rite', d:'Masks and orifice covers laid on the dead.'},
+          {t:'Rank', d:'Gold worn across classes — the Boxer Codex (c. 1590) pictures even a Visayan slave "adorned with gold."'}
+        ]},
+        {p:`The Oton mask is one of three death-mask sets held by the National Museum (the others from Cebu City, found 2007, and Butuan). Gold orifice covers are a signature of coastal China, Taiwan, and island Southeast Asia. Visayans sealed eyes and nose against evil spirits — who, they held, feared gold\u2019s brightness — and to guide the kalag (soul) to its kin across the water. The dead arrived acceptable only "well ornamented."`},
+        {p:`The Surigao find turned up a four-kilogram chain and a 4.5-meter kamagi of twelve joined necklaces, sashes, buckles, and a balance scale — split for decades between Ayala Museum and the Bangko Sentral, finally reunited in 2024. Butuan, on the Agusan\u2019s silt, was the gold capital: its plank-built balanghai traded as early as the fourth century, and its rajah sent tribute to Song China in 1001.`},
+        {q:{t:'The people of this island are very skillful in their handling of gold. They weigh it with the greatest skill and delicacy that have ever been seen. The first thing they teach their children is the knowledge of gold and the weights with which they weigh it, for there is no other money among them.', c:'A Spanish account of Luzon, 1586'}},
+        {fig:{t:'The Oton gold death mask', n:'Eye cover and nose piece in repoussé gold, Oton, Iloilo. National Museum of the Philippines — "gold laid over the dead, to pay the crossing."'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'The forge, plain', d:'The same fire, a different metal', r:'#/metalwork/craft'},
+          {t:'Jewelry', d:'Lost-wax casting, carried on', r:'#/jewelry'},
+          {t:'Languages', d:'The Baybayin "Ma" on a piloncito', r:'#/languages'},
+          {t:'Philippine tattoo', d:'The marked body, as record', r:'#/metalwork/philippine-tattoo'}
+        ]}
+      ]
+    },
+    'philippine-tattoo':{
+      title:'Philippine Tattoo — the Pintados and the Batok',
+      kicker:'The archipelago read its history off the body.',
+      meta:[['Sources','Boxer Codex (c. 1590); Kalinga practice'],['Region','Visayas & Kalinga, Luzon'],['Status','Living practice']],
+      blocks:[
+        {h:'The painted ones'},
+        {p:`The Spanish called the Visayas Las Islas de los Pintados — the islands of the painted. The Boxer Codex (c. 1590) shows a Bohol couple "showing their patok or tattoos": skin as text, inked before the colony was a century old. Three hundred years on, the same hand-tapping survives in the Kalinga highlands as batok.`},
+        {kv:[
+          ['Pintados','Spanish name for the tattooed Visayans of Cebu, Bohol, Leyte, Samar'],
+          ['Boxer Codex','c. 1590 manuscript; 75 colored plates; held at Indiana University\u2019s Lilly Library'],
+          ['patok','Visayan term for tattoo'],
+          ['batok','Kalinga hand-tapped tattooing; mambabatok, the tattooist'],
+          ['tools','citrus thorn (calamansi or pomelo) on a bamboo shaft, driven by a tapping stick; ink of charcoal soot and water'],
+          ['Apo Whang-Od','b. 17 February 1917, Buscalan, Tinglayan, Kalinga'],
+          ['fatok','women\u2019s marks: beauty and wealth'],
+          ['fi-ing','men\u2019s warrior tattoo; bikking chest piece; last fi-ing 1972'],
+          ['revival','Grace Palicas (grandniece), Elyang Wigan, and a rising generation of women mambabatok']
+        ]},
+        {h:'Marks and their meanings'},
+        {ul:[
+          {t:'Eagle', d:'A warrior who had taken an enemy\u2019s life.'},
+          {t:'Python-scale', d:'From the origin story of Lagkunawa and the hero-god Banna.'},
+          {t:'Three dots', d:'Whang-Od\u2019s signature: herself and her two apprentices.'},
+          {t:'Nature and geometry', d:'Ferns, centipedes, rice terraces, stars.'}
+        ]},
+        {p:`Whang-Od began as a teenager under her father, the first and only woman mambabatok of her time. For men, the bikking could take days and cost a large pig or kilos of rice; women were marked for fertility and beauty. The elder women say you cannot take your beads and gold to the afterlife — only the markings on the body.`},
+        {p:`The art nearly died with her: transmission is bloodline-bound, and she has no children. Headhunting ended, and the last fi-ing was 1972. Then, in her nineties, the tourists came — at peak more than 400 a day — and Whang-Od trained her grandniece Grace Palicas and other women, breaking the patrilineal rule. In 2018 she received the Dangal ng Haraya; in April 2023, at 106, she became the oldest person on a Vogue cover.`},
+        {q:{t:'I\u2019ll only stop when I can no longer see, so I can continue to give people the mark of Buscalan, the mark of Kalinga.', c:'Apo Whang-Od (Vogue Philippines, 2023)'}},
+        {fig:{t:'Apo Whang-Od tattooing', n:'The thorn, the tap, the archive on skin — Buscalan, c. 2016.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Philippine gold', d:'The body as record, in metal and ink', r:'#/metalwork/philippine-gold'},
+          {t:'Drawing', d:'The mark, made by hand', r:'#/drawing'},
+          {t:'Languages', d:'A script the body could also carry', r:'#/languages'}
+        ]}
+      ]
+    }
+  }
+},
+
+/* ---------- PSYCHOLOGY ---------- */
+psychology:{
+  num:'19', title:'Psychology & the Sacred',
+  kicker:'The psyche and the depths — analytical psychology, mysticism, and the shaman\u2019s map of the inner world.',
+  meta:[['Focus','Depth psychology · the numinous'],['Anchors','Jung · Eckhart · Eliade'],['Question','What does the psyche know that the ego cannot say?']],
+  blocks:[
+    {h:'The territory'},
+    {p:`This shelf gathers the disciplines that take the psyche and the sacred as real: Jung\u2019s analytical psychology, the mystical traditions of the via negativa, and the shaman\u2019s ecstatic technique. Each maps an interior that reason alone cannot chart.`},
+    {ul:[
+      {t:'Analytical psychology', d:'The collective unconscious, archetypes, and individuation.', r:'#/psychology/jung'},
+      {t:'Mysticism', d:'A knowing that is not a proposition — the via negativa.', r:'#/psychology/mysticism'},
+      {t:'Shamanism', d:'Ecstasy as technique — the axis mundi and the soul\u2019s flight.', r:'#/psychology/shamanism'}
+    ]},
+    {fig:{t:'The inner map', n:'The psyche as territory — conscious, personal unconscious, collective unconscious — placeholder.'}}
+  ],
+  children:{
+    jung:{
+      title:'Analytical Psychology (C. G. Jung)',
+      kicker:'A symptom is a question the ego has refused to hear.',
+      meta:[['Born','26 July 1875 · Kesswil'],['Died','6 June 1961 · Küsnacht'],['Break with Freud','1913']],
+      blocks:[
+        {h:'Origins and the break with Freud'},
+        {p:`Trained at Zurich\u2019s Burghölzli clinic under Eugen Bleuler, Jung pioneered word-association experiments that exposed unconscious "feeling-toned complexes." He met Freud in 1907 and became the heir apparent; the rupture came in 1913 over Jung\u2019s insistence that libido is generalized psychic energy, not sexuality. The break triggered his "confrontation with the unconscious" (1913–1917), recorded in The Red Book (Liber Novus) — calligraphed, painted, and unpublished until 2009.`},
+        {h:'The collective unconscious and the archetypes'},
+        {p:`Beneath the personal unconscious of repression lies the collective unconscious — an inherited, transpersonal stratum common to all humanity, structured by archetypes rather than fixed images. An archetype is, in Jung\u2019s phrase, "empty and purely formal": a tendency to form representations. It surfaces in dream, myth, and symptom as symbols such as the shadow, the anima/animus, and the Self, recurring across cultures without direct transmission.`},
+        {h:'Types, individuation, and synchronicity'},
+        {p:`Psychological Types (1921) fixed the attitudes extraversion/introversion and four functions — thinking, feeling, sensation, intuition. Individuation is the lifelong integration of conscious and unconscious toward a totality Jung named the Self. In Synchronicity (1952), developed with physicist Wolfgang Pauli, he proposed an "acausal connecting principle" for meaningful coincidence.`},
+        {kv:[
+          ['collective unconscious','inherited, universal stratum of psyche beneath the personal unconscious'],
+          ['archetype','"empty and purely formal" pattern — a possibility of representation, not an inherited idea'],
+          ['persona','the social mask adapted to collective expectation'],
+          ['shadow','the disowned, repressed side of the personality'],
+          ['anima / animus','contrasexual inner figures mediating the unconscious'],
+          ['the Self','archetype of totality; the regulating center of the whole psyche'],
+          ['individuation','lifelong integration of conscious and unconscious toward wholeness'],
+          ['synchronicity','"acausal connecting principle"; meaningful coincidence'],
+          ['active imagination','deliberate dialogue with unconscious images while conscious'],
+          ['transcendent function','the process uniting conscious and unconscious opposites into a reconciling symbol']
+        ]},
+        {ul:[
+          {t:'The psyche is purposive', d:'Dreams and symptoms compensate; they do not merely malfunction.'},
+          {t:'Becoming is a task', d:'Individuation is ethical and religious, not a therapeutic repair.'},
+          {t:'Opposites are reconciled', d:'Psychic life advances through their union, never their elimination.'},
+          {t:'Myth is self-description', d:'Myth, alchemy, and religion preserve what modern knowledge forgot.'},
+          {t:'Meaning is irreducible', d:'Symbol and synchronicity resist reduction to mechanism.'}
+        ]},
+        {q:{t:'As far as we can discern, the sole purpose of human existence is to kindle a light in the darkness of mere being.', c:'Memories, Dreams, Reflections'}},
+        {fig:{t:'The Red Book (Liber Novus)', n:'Jung\u2019s hand-painted record of his confrontation with the unconscious (1913–1930); held private in the family archive, first published in 2009.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Mysticism', d:'The via negativa, as depth', r:'#/psychology/mysticism'},
+          {t:'Shamanism', d:'Ecstasy as technique', r:'#/psychology/shamanism'},
+          {t:'Philosophy', d:'The psyche and the question of the self', r:'#/philosophy'},
+          {t:'Literature', d:'The sentence that follows a mind', r:'#/literature'}
+        ]}
+      ]
+    },
+    mysticism:{
+      title:'Mysticism',
+      kicker:'Two ways up the one mountain — speaking the divine (kataphasis), then unsaying every word (apophasis) — until only the dark knowing is left, and the deepest knowledge turns out not to be a proposition.',
+      meta:[['Tradition','Apophatic & kataphatic'],['Lineage','Plotinus · Pseudo-Dionysius · Eckhart · Teresa of Ávila'],['Terminus','The unio mystica']],
+      blocks:[
+        {h:'Two ways up the mountain'},
+        {p:`Kataphasis affirms; apophasis denies. The first names God through what God most resembles — light, being, goodness, the word. The second unsays every name, because each one, however true, is too small. The negative way is not despair but precision; each "not" is a step, and the mountain is climbed by subtraction.`},
+        {p:`The deepest knowing, then, is not a proposition. A statement can be owned by someone who has not changed; this knowing requires the knower to be changed. The mystics call the terminus union — unio mystica — not conclusion. Pseudo-Dionysius gives the hinge: one ascends into "the gloom of the agnosia," the unknowing, and, "by knowing nothing," knows "above mind" (Mystical Theology I.3).`},
+        {kv:[
+          ['apophasis','Greek "to say away" — negation as the ascent'],
+          ['kataphasis','Greek "to affirm" — naming by likeness'],
+          ['unio mystica','the soul\u2019s union with God; the terminus of the way'],
+          ['agnosia','unknowing — the dark summit in Pseudo-Dionysius'],
+          ['the One','Plotinus\u2019 first principle, "beyond being" (epekeina tēs ousias)'],
+          ['the ground','Eckhart\u2019s word for the soul\u2019s deepest point — one with God\u2019s ground'],
+          ['Gelassenheit','Eckhart\u2019s "letting-be"; detachment, releasement'],
+          ['moradas','Teresa\u2019s "mansions" — the seven rooms of the Interior Castle']
+        ]},
+        {ul:[
+          {t:'Plotinus (204–270)', d:'The One beyond being, touched in ecstasy; the goal is "the flight of the alone to the Alone" (Enneads VI.9.11).'},
+          {t:'Pseudo-Dionysius (c. 5th–6th c.)', d:'Negations above affirmations; the divine darkness beyond every name.'},
+          {t:'Meister Eckhart (c. 1260–1328)', d:'The soul\u2019s ground and God\u2019s ground are one; condemned posthumously in 1329.'},
+          {t:'Teresa of Ávila (1515–1582)', d:'The Interior Castle (1577): the soul as seven mansions, the seventh a spiritual marriage.'}
+        ]},
+        {q:{t:'The eye with which I see God is the same eye with which God sees me.', c:'Meister Eckhart, German Sermon 12'}},
+        {h:'The not-proposition'},
+        {p:`Plotinus set the problem: the One is beyond being and beyond every predicate, yet the soul longs for it and, in the rarest moment, touches it — not by thinking about it, but by becoming simple enough to receive it. Knowing here is identification; knower, known, and knowing are one event.`},
+        {p:`Teresa domesticates the abyss, which is not a softening. She turns the union into an architecture — the castle of seven mansions — so that an ordinary nun may walk it room by room. The summit remains Plotinus\u2019: not information, but a condition of the soul, entered rather than understood.`},
+        {p:`This is why the page sits under psychology, not theology. Jung read the mystics as cartographers of the unconscious — people who mapped the psyche\u2019s deepest event and came back with a report language could not quite carry.`},
+        {fig:{t:'Two ways, one summit', n:'Kataphasis climbing by affirmation, apophasis by negation — meeting in the dark. Placeholder.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Jung', d:'The psyche\u2019s own underground, and the God-image within', r:'#/psychology/jung'},
+          {t:'Philosophy', d:'The apophatic way as metaphysics', r:'#/philosophy'},
+          {t:'Languages', d:'"Mystic" from Greek myein, "to close"', r:'#/languages'}
+        ]}
+      ]
+    },
+    shamanism:{
+      title:'Shamanism',
+      kicker:'Ecstasy as a craft — the healer who climbs the axis mundi and comes back.',
+      meta:[['Key text','Eliade, Shamanism (1951; Eng. 1964)'],['The word','Tungusic (Evenki) šamān, via Russian'],['Core','Axis mundi · soul-flight · trance']],
+      blocks:[
+        {h:'A technique of ecstasy'},
+        {p:`Mircea Eliade (1907–1986) set the terms in Shamanism: Archaic Techniques of Ecstasy — French 1951, English by Willard R. Trask in 1964. His move was to narrow the word: the shaman is not every healer or priest, but the master of ecstasy — the one who enters trance at will, sends the soul out of the body, and returns.`},
+        {p:`The word is Tungusic. "Shaman" descends from šamān among the Evenki, passing through Russian into the European languages. A local name for a nearly universal craft.`},
+        {h:'The map'},
+        {kv:[
+          ['axis mundi','the world axis — tree, pillar, mountain, ladder — joining sky, earth, underworld'],
+          ['soul-flight','the journey itself: the soul leaves the body and travels'],
+          ['trance','the state entered at will, usually through drumming and dance'],
+          ['drum','the shaman\u2019s "horse" among the Tungus — rhythm as vehicle and heartbeat'],
+          ['psychopomp','guide of souls: escorting the dead, retrieving the lost'],
+          ['healer','diagnosis as soul-retrieval; illness as a soul gone astray'],
+          ['master of ecstasy','Eliade\u2019s defining phrase for the shaman\u2019s skill'],
+          ['babaylan','the Filipino shaman-healer — Visayan babaylan, Tagalog catalonan']
+        ]},
+        {ul:[
+          {t:'The call', d:'Often an initiatory sickness: the candidate dies, is dismembered, and is remade.'},
+          {t:'The journey', d:'Ascent to the sky or descent to the underworld along the axis.'},
+          {t:'The return', d:'What separates the shaman from the merely ecstatic is the return — a soul, a cure, a message.'},
+          {t:'The role', d:'Healer, diviner, psychopomp — mediator between the living and the spirits.'}
+        ]},
+        {q:{t:'The shaman is the great specialist in the human soul; he alone "sees" it, for he knows its "form" and its destiny.', c:'Mircea Eliade, Shamanism (tr. Willard R. Trask)'}},
+        {h:'The healer\u2019s office'},
+        {p:`The shaman\u2019s work is medicine and more: a psychopomp who escorts the dead, a diviner who reads the hidden, a keeper of the community\u2019s relation to what it cannot see. Eliade draws the line between shaman and possessed — the shaman commands the journey; the possessed is the spirit\u2019s instrument. Control is the difference between a technique and a seizure.`},
+        {p:`The drum is not decoration. Among the Tungus it is the shaman\u2019s horse; the steady beat is both vehicle and heartbeat, lowering the threshold while the body stays alive and the soul is away. Trance is the disciplined instrument of the craft.`},
+        {h:'The babaylan'},
+        {p:`The Philippine instance. The babaylan (Visayan; catalonan in Tagalog) was the pre-colonial spiritual specialist — healer, midwife, diviner, ritual leader, and arbiter, mediating between the living and the anito and diwata. Mostly women; men who served often took a liminal or feminized role. Spanish rule drove the office underground, but the healing tradition never fully died.`},
+        {fig:{t:'The axis mundi', n:'Tree, pillar, and ladder as one figure: sky above, earth at the trunk, underworld at the roots — the shaman\u2019s route. Placeholder.'}},
+        {h:'Connections'},
+        {ul:[
+          {t:'Jung', d:'The shaman as archetype; the archaic in the psyche', r:'#/psychology/jung'},
+          {t:'Mysticism', d:'Two techniques of the inward journey', r:'#/psychology/mysticism'},
+          {t:'Languages', d:'šamān out of the Tungusic', r:'#/languages'}
+        ]}
+      ]
+    }
+  }
+},
+
+/* ---------- PROGRAMMING ---------- */
+programming:{
+  num:'15', title:'Programming & Computer Science',
+  kicker:'The machine as a second body of the thought — programs that reason, and the discipline of speaking in systems that hold.',
+  meta:[['Focus','Algorithms · Systems · The web'],['Currently','This site, hand-rolled'],['Tool','The command line · the editor · plain text']],
+  blocks:[
+    {h:'Why programming'},
+    {p:`Programming is where logic gets hands. A proof and a program are the same kind of thing — a thought made precise enough that a machine can carry it, and carrying it, test it. What mathematics promises on paper, programming delivers in the running: an idea that acts, and can be run again and again until it behaves.`},
+    {p:`And the web is the room this whole ledger lives in. To build the room by hand — the HTML, the styles, the data held as plain text, no framework between the thought and the page — is a way of keeping the same honesty the rest of the site is built on.`},
+    {h:'Working strands'},
+    {ul:[
+      {t:'This site as program', d:'Hand-rolled HTML, CSS, and plain-data content — every part readable, nothing hidden.', r:'#/about'},
+      {t:'Algorithms, slowly', d:'Sorting, searching, and the structures they lean on, worked by hand before by keyboard.'},
+      {t:'Small tools', d:'The command line and the editor as instruments; the craft of composing little programs that do one thing well.'}
+    ]},
+    {fig:{t:'A program, as a flow', n:'Input, transformation, output — the path a thought takes through the machine. Placeholder.'}},
+    {h:'Notebook'},
+    {log:[
+      {d:'Oct 2026', t:'The tabularium, built by hand', x:'Site · the ledger as a single-room program, content held as data', r:'#/about'},
+      {d:'Sep 2026', t:'Z/12Z as a lock', x:'Games · modular arithmetic made tactile, a puzzle in twelve teeth', r:'#/mathematics/number-theory'},
+      {d:'Planned', t:'The Forking Path, as a system', x:'Games · a branching narrative where states persist across branches', r:'#/games/forking-paths'}
+    ]},
+    {q:{t:'The programmer, like the poet, works only slightly removed from pure thought. He builds his castles in the air, from air, creating by exertion of the imagination.', c:'Fred Brooks, The Mythical Man-Month'}}
+  ]
 },
 
 languages: {
@@ -1143,7 +1772,7 @@ journal:{
 /* ---------- ABOUT ---------- */
 about:{
   num:'19', title:'About',
-  kicker:'Tyler Miranda — independent student of philosophy, mathematics, literature, and the crafts. This site is the ledger: a life kept in the open, revised as it goes.',
+  kicker:'Tyler Aragon Miranda — independent student of philosophy, mathematics, literature, and the crafts. This site is the ledger: a life kept in the open, revised as it goes.',
   meta:[['Contact','tyler@meresophist.xyz'],['Location','Somewhere with a desk'],['Status','Open to correspondence']],
   blocks:[
     {h:'A short biography, intellectual rather than factual'},
@@ -1164,7 +1793,7 @@ about:{
     {h:'A CV of curiosities'},
     {kv:[
       ['Position','Independent scholar (self-appointed)'],
-      ['Fields','Philosophy · Mathematics · Literature · Languages · Design · Craft'],
+      ['Fields','Philosophy · Mathematics · Literature · Languages · Design · Craft · Code'],
       ['Practice','Close reading, slow thinking, public notes'],
       ['Output','Essays, proofs, fiction, objects, this archive'],
       ['Availability','Open to correspondence and correction']

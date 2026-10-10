@@ -1,7 +1,14 @@
 /* ============================================================
    0. TOKENS
    ============================================================ */
-:root, [data-theme="papyrus"]{
+:root, [data-theme="jeepney"]{
+  --paper:#f6ead2; --ink:#2a1508;
+  --flame:#e0341e; --acid:#ffb400;
+  --on-flame:#f6ead2; --on-acid:#2a1508;
+  --line:rgba(42,21,8,.22); --line-soft:rgba(42,21,8,.10);
+  --line-on-ink:rgba(246,234,210,.26); --line-on-ink-soft:rgba(246,234,210,.12);
+}
+[data-theme="papyrus"]{
   --paper:#eceae3; --ink:#0c0c0c;
   --flame:#ff3b00; --acid:#d9ff00;
   --on-flame:#0c0c0c; --on-acid:#0c0c0c;
@@ -620,7 +627,39 @@ html.no-gsap .sub{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
 .card.up:hover{background:var(--flame); color:var(--ink)}
 
 /* ============================================================
-   7. RESPONSIVE
+   7. FILIPINO SIGN-MAKING PASS
+   ============================================================ */
+:root{ --r:16px; --r-sm:9px }
+
+/* rounder visual language — painted enamel signboards */
+.topic-card, .card, .fig-frame{border-radius:var(--r)}
+.num, .subject-num, .skip, .theme-btn{border-radius:var(--r-sm)}
+.rail-status{border-radius:999px}
+.sub-meta{border-radius:var(--r-sm); overflow:hidden}
+
+/* index numbers — eye-popping flame, the visual anchor of each shelf */
+.num, .subject-num{
+  background:var(--flame); color:var(--on-flame); border-color:var(--flame); opacity:1;
+}
+.group-eyebrow .num, .card-head .num{background:var(--flame); color:var(--on-flame); border-color:var(--flame); opacity:1}
+
+/* the sign-painter face, applied as the display voice */
+.brand{font-family:var(--filipino); font-size:13px; letter-spacing:.1em; text-transform:uppercase}
+.group-title{font-family:var(--filipino); font-weight:400; letter-spacing:.01em; text-transform:uppercase; line-height:1}
+.card-title{font-family:var(--filipino); font-weight:400; text-transform:uppercase; letter-spacing:.01em}
+
+/* even, justified content margins for legibility */
+.blk-p, .u-d, .l-x, .kv-row dd{text-align:justify; hyphens:auto; -webkit-hyphens:auto; text-justify:inter-word}
+
+/* vertical Baybayin — top-to-bottom, upright */
+.hero-baybayin{
+  font-family:var(--baybayin);
+  writing-mode:vertical-rl; text-orientation:upright;
+  letter-spacing:.08em; font-size:1.5rem; line-height:1; color:var(--flame);
+}
+
+/* ============================================================
+   8. RESPONSIVE
    ============================================================ */
 @media (max-width: 1200px){
   :root{--gutter:clamp(40px, 5vw, 64px)}
