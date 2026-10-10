@@ -72,6 +72,8 @@ html{
   -webkit-text-size-adjust:100%;
   overflow-x:hidden;
   overflow-x:clip;
+  scroll-snap-type:y proximity;
+  scroll-padding-top:calc(var(--bar) + 6px);
 }
 
 body{
@@ -189,32 +191,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .indicator button.on::after{width:26px; background:currentColor; opacity:1}
 
 /* ============================================================
-   2. PANELS — STICKY STACK
+   2. HERO
    ============================================================ */
 #home{position:relative}
 
-.panel{
-  position:sticky; top:0;
+.hero{
   min-height:100vh; min-height:100svh;
   display:flex; flex-direction:column; justify-content:space-between;
   gap:clamp(18px,3vh,40px);
   padding:calc(var(--bar) + 30px) var(--pad) clamp(22px,4vh,46px) calc(var(--pad) + 22px);
-  background-color:var(--paper);
-  background-image:var(--noise);
-  border-top:1px solid var(--ink);
-  transition:background-color .4s ease, color .4s ease, border-color .4s ease;
-}
-.panel.dark{
   background-color:var(--ink); color:var(--paper);
+  background-image:var(--noise);
   --line:var(--line-on-ink);
   --line-soft:var(--line-on-ink-soft);
-  border-top-color:var(--paper);
+  scroll-snap-align:start;
+  transition:background-color .4s ease, color .4s ease;
 }
-.panel.flame{background-color:var(--flame); color:var(--on-flame); border-top-color:var(--ink)}
-.panel.acid{background-color:var(--acid); color:var(--on-acid); border-top-color:var(--ink)}
-
-/* panel head row */
-.panel-top{
+.hero-top{
   display:flex; align-items:center; justify-content:space-between;
   font-family:var(--mono); font-size:10px; letter-spacing:.22em; text-transform:uppercase;
 }
@@ -223,21 +216,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   min-width:30px; height:20px; padding:0 7px;
   border:1px solid currentColor; border-radius:0;
   opacity:.65;
-}
-.enter{
-  display:inline-flex; align-items:center; gap:9px;
-  border-bottom:1px solid currentColor; padding-bottom:3px;
-  transition:gap .3s cubic-bezier(.2,.8,.2,1), opacity .3s;
-  opacity:.75;
-}
-.enter:hover{gap:16px; opacity:1}
-.arw{display:inline-block; transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.enter:hover .arw{transform:translate(3px,-3px)}
-
-.panel-bot{
-  display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
-  font-family:var(--mono); font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
-  opacity:.42;
 }
 
 /* ============================================================
@@ -284,73 +262,82 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ============================================================
-   4. TABULARIUM TABLE
+   4. INDEX — GROUPS + MASONRY
    ============================================================ */
-.tab-wrap{flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(16px,2.6vh,30px); min-height:0}
-.topic-title{
+.group{
+  padding:clamp(44px,7vh,96px) var(--pad) clamp(40px,7vh,88px) calc(var(--pad) + 22px);
+  border-top:1px solid var(--ink);
+  scroll-snap-align:start;
+  scroll-margin-top:calc(var(--bar) + 4px);
+}
+.group-head{margin-bottom:clamp(26px,4.6vh,48px)}
+.group-eyebrow{
+  display:flex; align-items:center; gap:16px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+  opacity:.55; margin-bottom:14px;
+}
+.group-title{
   font-family:var(--serif); font-weight:400;
-  font-size:clamp(2.6rem, 9vw, 8rem);
-  line-height:.88; letter-spacing:-.03em;
+  font-size:clamp(2.8rem, 8vw, 6rem);
+  line-height:.9; letter-spacing:-.03em;
 }
-.topic-title.small{font-size:clamp(2.1rem,6vw,5rem)}
+.group-line{
+  max-width:60ch; margin-top:14px;
+  font-size:clamp(1rem,1.4vw,1.2rem); line-height:1.5; opacity:.68;
+}
 
-.tab-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:4px}
-table.tab{width:100%; min-width:700px; border-collapse:collapse}
-table.tab th{
-  text-align:left; font-family:var(--mono); font-size:9.5px; font-weight:400;
-  letter-spacing:.22em; text-transform:uppercase; opacity:.42;
-  padding:0 16px 10px 0; border-bottom:1px solid var(--ink);
+.masonry{
+  columns:3 300px;
+  column-gap:clamp(14px,2vw,28px);
 }
-table.tab td{
-  padding:11px 16px 11px 0; border-bottom:1px solid var(--line-soft);
-  vertical-align:top; font-size:14px;
+.topic-card{
+  break-inside:avoid; -webkit-column-break-inside:avoid;
+  border:1px solid var(--line);
+  background-color:var(--paper);
+  background-image:var(--noise);
+  padding:22px 20px 18px;
+  margin:0 0 clamp(14px,2vw,28px);
+  transition:border-color .3s, background-color .4s;
 }
-table.tab tr:last-child td{border-bottom:1px solid var(--line)}
-.t-cat{
-  font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
-  white-space:nowrap; opacity:.6; padding-right:22px;
+.topic-card:hover{border-color:var(--ink)}
+.card-head{display:flex; align-items:baseline; gap:12px}
+.card-head .num{flex:0 0 auto; opacity:.5}
+.card-title{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(1.55rem,2.5vw,2.05rem);
+  line-height:1.04; letter-spacing:-.015em;
 }
-.t-end{font-weight:500}
-.t-note{display:block; font-size:12.5px; opacity:.55; margin-top:2px}
-.t-status{
-  font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase;
-  white-space:nowrap;
+.card-title a{transition:color .25s}
+.card-title a:hover{color:var(--flame)}
+.card-enter{
+  margin-left:auto; font-family:var(--mono); font-size:12px; opacity:.4;
+  transition:opacity .25s, transform .25s;
 }
-.t-date{font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; opacity:.45; white-space:nowrap}
-.t-link{font-family:var(--mono); font-size:12px; opacity:.55; transition:opacity .25s, transform .25s; display:inline-block}
-.t-link:hover{opacity:1; transform:translate(2px,-2px)}
-tr:hover .t-end{color:var(--flame)}
-.panel.dark tr:hover .t-end{color:var(--flame)}
-
-/* ============================================================
-   5. TOPIC PANELS
-   ============================================================ */
-.topic-grid{
-  flex:1; display:grid;
-  grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
-  gap:clamp(24px,5vw,90px);
-  align-items:end;
-  padding-bottom:clamp(6px,2vh,24px);
+.card-enter:hover{opacity:1; transform:translate(2px,-2px)}
+.card-kicker{margin-top:11px; font-size:13.5px; line-height:1.5; opacity:.6; max-width:44ch}
+.card-items{list-style:none; margin-top:15px; border-top:1px solid var(--line-soft)}
+.card-items li{border-bottom:1px solid var(--line-soft)}
+.card-items li > a, .card-items li > span{display:flex; gap:12px; align-items:baseline; padding:9px 0}
+.card-items li > a{transition:padding-left .3s cubic-bezier(.2,.8,.2,1)}
+.card-items li > a:hover{padding-left:8px}
+.card-items .k{
+  flex:0 0 76px;
+  font-family:var(--mono); font-size:9px; letter-spacing:.12em; text-transform:uppercase;
+  opacity:.45;
 }
-.topic-grid.flip .topic-title{order:2}
-.topic-grid.flip .topic-side{order:1}
-.topic-side{display:flex; flex-direction:column; gap:clamp(16px,2.4vh,28px)}
-.topic-kicker{font-size:clamp(.92rem,1.15vw,1.08rem); line-height:1.5; opacity:.7; max-width:44ch}
-.topic-items{list-style:none; border-top:1px solid var(--line)}
-.topic-items li{border-bottom:1px solid var(--line-soft)}
-.topic-items li > a, .topic-items li > span{display:flex; gap:16px; align-items:baseline; padding:11px 0}
-.topic-items li > a{transition:padding-left .35s cubic-bezier(.2,.8,.2,1), color .3s}
-.topic-items li > a:hover{padding-left:10px; color:var(--flame)}
-.k{
-  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
-  opacity:.45; flex:0 0 96px;
-}
-.v{font-size:14.5px; line-height:1.4}
-.topic-items li > a::after{
-  content:'↗'; margin-left:auto; font-family:var(--mono); font-size:11px;
+.card-items .v{font-size:13.5px; line-height:1.42}
+.card-items li > a::after{
+  content:'↗'; margin-left:auto; font-family:var(--mono); font-size:10px;
   opacity:0; transition:opacity .3s, transform .3s;
 }
-.topic-items li > a:hover::after{opacity:1; transform:translate(2px,-2px)}
+.card-items li > a:hover::after{opacity:1; transform:translate(2px,-2px)}
+.card-items li > a:hover .v{color:var(--flame)}
+.card-more{
+  display:inline-block; margin-top:15px;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+  opacity:.5; transition:opacity .25s, color .25s;
+}
+.card-more:hover{opacity:1; color:var(--flame)}
 
 /* ============================================================
    6. SUBPAGES
@@ -524,23 +511,18 @@ tr:hover .t-end{color:var(--flame)}
    7. RESPONSIVE
    ============================================================ */
 @media (max-width: 1000px){
-  .topic-grid{grid-template-columns:1fr; align-items:start; gap:26px}
-  .topic-grid.flip .topic-title{order:1}
-  .topic-grid.flip .topic-side{order:2}
-  .topic-title{font-size:clamp(2.4rem,11vw,4.4rem)}
+  .masonry{columns:2 260px}
+  .group-title{font-size:clamp(2.4rem,10vw,4.4rem)}
 }
 
 @media (max-width: 860px){
   :root{--pad:18px; --bar:42px}
-  .panel{
-    position:relative; top:auto; min-height:auto;
-    padding:calc(var(--bar) + 44px) var(--pad) 48px;
-    gap:26px;
-  }
-  .panel.dark{border-top-color:var(--ink)}
+  .hero{padding:calc(var(--bar) + 44px) var(--pad) 48px; gap:26px}
   .rail{display:none}
   .indicator{display:none}
   .topnav{display:none}
+  .masonry{columns:1}
+  .group{padding:44px var(--pad) 40px}
   .hero-title{font-size:clamp(3.4rem,20vw,7rem)}
   .ht-2{padding-left:clamp(20px,9vw,80px)}
   .hero-lede{padding-left:clamp(20px,9vw,80px); font-size:.95rem}
@@ -553,13 +535,14 @@ tr:hover .t-end{color:var(--flame)}
   .l-t{grid-column:1}
   .l-x{grid-column:1}
   .l-a{grid-column:2; grid-row:1 / span 3}
-  .k{flex:0 0 66px; font-size:9px}
+  .card-items .k{flex:0 0 64px; font-size:8.5px}
   .fig-frame{aspect-ratio:4/3}
 }
 
 @media print{
   .meander-strip,.topbar,.rail,.indicator,.progress,.skip,.meander-line{display:none !important}
-  .panel{position:static !important; min-height:auto !important; border-top:1px solid #000; background-image:none}
+  .hero,.group,.topic-card{border:0 !important; background-image:none !important}
+  .hero{min-height:auto !important}
   .sub{padding:24px 0; background-image:none}
   body{background:#fff}
 }
@@ -580,24 +563,12 @@ tr:hover .t-end{color:var(--flame)}
 <header class="topbar">
   <a class="brand" href="#/">meresophist<span style="opacity:.5">.xyz</span></a>
   <nav class="topnav" aria-label="Sections">
-    <a href="#p-tabularium" data-jump>Tabula</a>
-    <a href="#/philosophy">Philosophy</a>
-    <a href="#/mathematics">Mathematics</a>
-    <a href="#/literature">Literature</a>
-    <a href="#/authors">Authors</a>
-    <a href="#/languages">Languages</a>
-    <a href="#/poetry">Poetry</a>
-    <a href="#/copywriting">Copywriting</a>
-    <a href="#/design">Design</a>
-    <a href="#/drawing">Drawing</a>
-    <a href="#/atelier">Atelier</a>
-    <a href="#/games">Games</a>
-    <a href="#/modeling">3D</a>
-    <a href="#/video">Video</a>
-    <a href="#/clothes">Clothes</a>
-    <a href="#/jewelry">Jewelry</a>
-    <a href="#/journal">Journal</a>
-    <a href="#/about">About</a>
+    <a href="#index" data-jump>Index</a>
+    <a href="#g-letters" data-jump>Letters</a>
+    <a href="#g-wordpage" data-jump>Word &amp; Page</a>
+    <a href="#g-imagetime" data-jump>Image &amp; Time</a>
+    <a href="#g-handobject" data-jump>Hand &amp; Object</a>
+    <a href="#g-record" data-jump>The Record</a>
   </nav>
   <button type="button" class="theme-btn" id="theme-btn">Palette · Papyrus</button>
 </header>
@@ -611,9 +582,9 @@ tr:hover .t-end{color:var(--flame)}
 <main id="home">
 
   <!-- 01 · HERO ------------------------------------------------>
-  <section class="panel dark" data-num="01" id="p-index" data-title="Index">
-    <div class="panel-top">
-      <span class="num">01</span>
+  <section class="hero snap-sec" id="p-index" data-title="Index">
+    <div class="hero-top">
+      <span class="num">00</span>
       <span>Index — Tyler Miranda</span>
     </div>
 
@@ -622,11 +593,11 @@ tr:hover .t-end{color:var(--flame)}
         <span class="ht-1">mere</span>
         <span class="ht-2">sophist</span>
       </h1>
-      <p class="hero-lede">A public record of learning — philosophy, mathematics, literature, and the crafts between them. Read slowly, made in the open, revised without shame.</p>
+      <p class="hero-lede">A public record of learning — philosophy, mathematics, literature, and the crafts between them. Grouped, so the archive has a spine. Read slowly, made in the open, revised without shame.</p>
       <div class="hero-meta">
         <span>Est. MMXXVI</span>
         <span>Independent study</span>
-        <span>Open ledger</span>
+        <span>18 topics · five shelves</span>
         <span>Scroll ↓</span>
       </div>
     </div>
@@ -639,174 +610,20 @@ tr:hover .t-end{color:var(--flame)}
     </div>
   </section>
 
-  <!-- 02 · TABULARIUM ------------------------------------------->
-  <section class="panel" data-num="02" id="p-tabularium" data-title="Tabularium">
-    <div class="panel-top">
-      <span class="num">02</span>
-      <a class="enter" href="#/tabularium">Enter <span class="arw">↗</span></a>
-    </div>
-
-    <div class="tab-wrap">
-      <h2 class="topic-title small">Tabularium</h2>
-      <div class="tab-scroll">
-        <table class="tab">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Current endeavor</th>
-              <th>Status</th>
-              <th>Updated</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="t-cat">Philosophy</td>
-              <td><span class="t-end">Aristotle — Nicomachean Ethics</span><span class="t-note">Book VI, on phronesis and practical wisdom</span></td>
-              <td class="t-status">Reading</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/philosophy/aristotle" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Philosophy</td>
-              <td><span class="t-end">The Ethics of Digital Identity</span><span class="t-note">Draft essay, ~2,400 words</span></td>
-              <td class="t-status">Writing</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/philosophy/digital-identity" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Mathematics</td>
-              <td><span class="t-end">Hardy &amp; Wright — Number Theory</span><span class="t-note">Chapter 3, congruences</span></td>
-              <td class="t-status">Studying</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/mathematics/number-theory" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Mathematics</td>
-              <td><span class="t-end">The Aesthetics of Proof</span><span class="t-note">Visual essay, concept stage</span></td>
-              <td class="t-status">Building</td>
-              <td class="t-date">Planned</td>
-              <td><a class="t-link" href="#/mathematics/aesthetics-of-proof" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Literature</td>
-              <td><span class="t-end">Borges — Labyrinths</span><span class="t-note">Infinity, mirrors, paradox</span></td>
-              <td class="t-status">Reading</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/literature/labyrinths" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Literature</td>
-              <td><span class="t-end">Wallace — Infinite Jest</span><span class="t-note">Reread; addiction and entertainment</span></td>
-              <td class="t-status">Reading</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/literature/infinite-jest" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Languages</td>
-              <td><span class="t-end">Ancient Greek — the long approach</span><span class="t-note">Alphabet, accents, first sentences</span></td>
-              <td class="t-status">Studying</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/languages/ancient-greek" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Poetry</td>
-              <td><span class="t-end">Prosody notebook — meter and breath</span><span class="t-note">The physics of a line</span></td>
-              <td class="t-status">Studying</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/poetry/prosody" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Copywriting</td>
-              <td><span class="t-end">The swipe file</span><span class="t-note">Forty entries, annotated</span></td>
-              <td class="t-status">Building</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/copywriting/swipe-file" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Graphic Design</td>
-              <td><span class="t-end">Bringhurst — Typographic Style</span><span class="t-note">Chapter by chapter</span></td>
-              <td class="t-status">Reading</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/design" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Drawing</td>
-              <td><span class="t-end">Daily studies — hands, chairs, corners</span><span class="t-note">Construction before contour</span></td>
-              <td class="t-status">Practicing</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/drawing/sketchbook" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Atelier</td>
-              <td><span class="t-end">The Cartographer of Impossible Maps</span><span class="t-note">Short fiction, second draft</span></td>
-              <td class="t-status">Writing</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/atelier/cartographer" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Game Development</td>
-              <td><span class="t-end">The Forking Path</span><span class="t-note">Design document</span></td>
-              <td class="t-status">Designing</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/games/forking-paths" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">3D Modeling</td>
-              <td><span class="t-end">The impossible coastline</span><span class="t-note">First mesh</span></td>
-              <td class="t-status">Building</td>
-              <td class="t-date">Planned</td>
-              <td><a class="t-link" href="#/modeling/impossible-coastline" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Video Editing</td>
-              <td><span class="t-end">Essay film — The Aesthetics of Proof</span><span class="t-note">Storyboard</span></td>
-              <td class="t-status">Planning</td>
-              <td class="t-date">Planned</td>
-              <td><a class="t-link" href="#/video/essay-film" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Making Clothes</td>
-              <td><span class="t-end">The bodice block</span><span class="t-note">Pattern drafting</span></td>
-              <td class="t-status">Studying</td>
-              <td class="t-date">Sep 2026</td>
-              <td><a class="t-link" href="#/clothes/pattern-drafting" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Making Jewelry</td>
-              <td><span class="t-end">Lost-wax casting — first flask</span><span class="t-note">The four methods compared</span></td>
-              <td class="t-status">Studying</td>
-              <td class="t-date">Oct 2026</td>
-              <td><a class="t-link" href="#/jewelry/casting-methods" aria-label="Open">↗</a></td>
-            </tr>
-            <tr>
-              <td class="t-cat">Site</td>
-              <td><span class="t-end">meresophist.xyz</span><span class="t-note">Building the Tabularium and the Journal</span></td>
-              <td class="t-status">Ongoing</td>
-              <td class="t-date">Now</td>
-              <td><a class="t-link" href="#/about" aria-label="Open">↗</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="panel-bot">
-      <span>02 / 19</span>
-      <span>Revised 09 Oct 2026</span>
-    </div>
-  </section>
+  <!-- groups generated by script -->
+  <div id="index"></div>
 
   <noscript>
-    <section class="panel">
-      <div class="panel-top"><span class="num">JS</span><span>No script</span></div>
-      <div class="hero-body">
-        <p class="hero-lede" style="padding-left:0;max-width:60ch">The full index of this site is generated with JavaScript. The Tabularium table above is the compact version of the same record — every shelf, in one table.</p>
+    <section class="group">
+      <div class="group-head">
+        <div class="group-eyebrow"><span class="num">JS</span><span>No script</span></div>
+        <h2 class="group-title">The index is generated</h2>
+        <p class="group-line">The grouped index is generated with JavaScript. Each card links to its own page; the Tabularium page groups every current endeavor by subject area.</p>
       </div>
     </section>
   </noscript>
 
-  <!-- 03–19 generated by script -->
+  <!-- groups generated by script -->
 
 </main>
 
@@ -825,159 +642,204 @@ tr:hover .t-end{color:var(--flame)}
     anywhere — including a static export of the same tree.)
    ============================================================ */
 const TOPICS = [
-  {
-    id:'philosophy', num:'03', nav:'Philosophy', title:'Philosophy', cls:'',
+  { id:'tabularium', num:'01', nav:'Tabularium', title:'Tabularium', group:'record',
+    kicker:'The public record of current inquiries — everything on the desk, in the queue, or in the draft folder.',
+    items:[
+      ['Active','18 entries, across five shelves','#/tabularium'],
+      ['Cadence','Weekly-ish, in the open','#/tabularium'],
+      ['Legend','Reading · Writing · Studying · Building','#/tabularium'],
+      ['Method','Entries move; struck rows are the record of the year','#/tabularium'],
+      ['Open','The whole ledger, grouped by subject','#/tabularium']
+    ]
+  },
+  { id:'philosophy', num:'02', nav:'Philosophy', title:'Philosophy', group:'letters',
     kicker:'Ethics, metaphysics, and the architecture of argument. Read slowly, on purpose.',
     items:[
       ['Reading','Aristotle — Nicomachean Ethics, Book VI','#/philosophy/aristotle'],
       ['Writing','The Ethics of Digital Identity','#/philosophy/digital-identity'],
-      ['Question','What does it mean to live well, now?','#/philosophy']
+      ['Question','What does it mean to live well, now?','#/philosophy'],
+      ['Rereading','Epictetus — Discourses','#/philosophy'],
+      ['Method','Close reading, then argument','#/philosophy']
     ]
   },
-  {
-    id:'mathematics', num:'04', nav:'Mathematics', title:'Mathematics', cls:'dark', flip:true,
+  { id:'mathematics', num:'03', nav:'Mathematics', title:'Mathematics', group:'letters',
     kicker:'Number theory, the aesthetics of proof, and the strange comfort of things that are certainly true.',
     items:[
       ['Studying','Hardy & Wright — Number Theory, ch. 3','#/mathematics/number-theory'],
       ['Building','The Aesthetics of Proof — a visual essay','#/mathematics/aesthetics-of-proof'],
-      ['Fascination','Cantor, infinity, and the diagonal argument','#/mathematics']
+      ['Fascination','Cantor, infinity, and the diagonal argument','#/mathematics'],
+      ['Notebook','Euclid, Book IX, Proposition 20','#/mathematics'],
+      ['Adjacent','Philosophy of mathematics','#/mathematics']
     ]
   },
-  {
-    id:'literature', num:'05', nav:'Literature', title:'Literature', cls:'',
+  { id:'literature', num:'04', nav:'Literature', title:'Literature', group:'letters',
     kicker:'Novels, labyrinths, and the sentences I keep returning to.',
     items:[
       ['Reading','Borges — Labyrinths','#/literature/labyrinths'],
       ['Rereading','Wallace — Infinite Jest','#/literature/infinite-jest'],
-      ['Queued','Sebald — The Rings of Saturn','#/literature']
+      ['Queued','Sebald — The Rings of Saturn','#/literature'],
+      ['Revisit','Calvino — Invisible Cities','#/authors/calvino'],
+      ['Look for','Structure as argument','#/literature']
     ]
   },
-  {
-    id:'authors', num:'06', nav:'Authors', title:'Authors', cls:'flame', flip:true,
-    kicker:'An index of the writers I keep in the room — and what I take from each.',
-    items:[
-      ['Borges','Infinity, mirrors, the library as universe','#/authors/borges'],
-      ['Calvino','Lightness, structure, the combinatorial imagination','#/authors/calvino'],
-      ['Pessoa','The self as a cast of characters','#/authors/pessoa']
-    ]
-  },
-  {
-    id:'languages', num:'07', nav:'Languages', title:'Languages & Philology', cls:'dark',
+  { id:'languages', num:'05', nav:'Languages', title:'Languages & Philology', group:'letters',
     kicker:'The history of words as a kind of time travel; grammar as a model of how a mind cuts up the world.',
     items:[
       ['Studying','Ancient Greek — the long approach','#/languages/ancient-greek'],
       ['Collecting','The etymology notebook — one word daily','#/languages/etymology'],
-      ['Question','What does a language know that its speakers forget?','#/languages']
+      ['Question','What does a language know that its speakers forget?','#/languages'],
+      ['Plan','One living language, undecided','#/languages'],
+      ['Connection','Why phronesis has no translation','#/philosophy/aristotle']
     ]
   },
-  {
-    id:'poetry', num:'08', nav:'Poetry', title:'Poetry & Writing', cls:'', flip:true,
+  { id:'authors', num:'06', nav:'Authors', title:'Authors', group:'letters',
+    kicker:'An index of the writers I keep in the room — and what I take from each.',
+    items:[
+      ['Borges','Infinity, mirrors, the library as universe','#/authors/borges'],
+      ['Calvino','Lightness, structure, the combinatorial imagination','#/authors/calvino'],
+      ['Pessoa','The self as a cast of characters','#/authors/pessoa'],
+      ['Sebald','Memory with its edges showing','#/authors'],
+      ['Woolf','The sentence that follows a mind','#/authors']
+    ]
+  },
+  { id:'poetry', num:'07', nav:'Poetry', title:'Poetry & Writing', group:'wordpage',
     kicker:'The sentence as a machine; the line as a unit of breath. Craft, studied the way one studies a trade.',
     items:[
       ['Studying','Prosody — meter, stress, breath','#/poetry/prosody'],
       ['Working','The no-adjective sequence','#/atelier/poems'],
-      ['Question','Why write, when the thinking already happens?','#/poetry']
+      ['Question','Why write, when the thinking already happens?','#/poetry'],
+      ['Method','Style studies — imitation as analysis','#/poetry'],
+      ['Principle','Read like a writer','#/poetry']
     ]
   },
-  {
-    id:'copywriting', num:'09', nav:'Copywriting', title:'Copywriting', cls:'flame',
+  { id:'copywriting', num:'08', nav:'Copywriting', title:'Copywriting', group:'wordpage',
     kicker:'Persuasion with the receipts on the table. Applied rhetoric, studied as a craft.',
     items:[
       ['Building','The swipe file — annotated','#/copywriting/swipe-file'],
       ['Lineage','Aristotle — rhetoric, the classical spine','#/philosophy'],
-      ['Method','Compression: every word load-bearing','#/copywriting']
+      ['Method','Compression: every word load-bearing','#/copywriting'],
+      ['Study','Ogilvy — the Rolls-Royce ad','#/copywriting/swipe-file'],
+      ['Ethic','Persuasion without manipulation','#/copywriting']
     ]
   },
-  {
-    id:'design', num:'10', nav:'Design', title:'Graphic Design', cls:'dark', flip:true,
-    kicker:'Visual rhetoric: grids, type, and the argument a layout makes before you read a word.',
-    items:[
-      ['Reading','Bringhurst — Typographic Style','#/design'],
-      ['Studying','The Swiss grid','#/design/grid-systems'],
-      ['Working','This site as specimen','#/about']
-    ]
-  },
-  {
-    id:'drawing', num:'11', nav:'Drawing', title:'Drawing', cls:'',
-    kicker:'Slowed looking. The hand as an instrument of attention.',
-    items:[
-      ['Daily','The sketchbook — dated, uncurated','#/drawing/sketchbook'],
-      ['Method','Construction before contour','#/drawing'],
-      ['Source','Ruskin — The Elements of Drawing','#/drawing']
-    ]
-  },
-  {
-    id:'atelier', num:'12', nav:'Atelier', title:'Atelier', cls:'dark', flip:true,
+  { id:'atelier', num:'09', nav:'Atelier', title:'Atelier', group:'wordpage',
     kicker:'Where the reading turns into making: fiction, fragments, and formal experiments.',
     items:[
       ['Fiction','The Cartographer of Impossible Maps','#/atelier/cartographer'],
       ['Poetry','A small ongoing sequence','#/atelier/poems'],
-      ['Method','Form, constraint, and the page as a machine','#/atelier']
+      ['Method','Form, constraint, and the page as a machine','#/atelier'],
+      ['Rule','Finish before polishing','#/atelier'],
+      ['Question','Where does the reading come out?','#/atelier']
     ]
   },
-  {
-    id:'games', num:'13', nav:'Games', title:'Game Development', cls:'acid',
-    kicker:'Games as systems that argue. Where the logic and the fiction share a room.',
-    items:[
-      ['Designing','The Forking Path — a design document','#/games/forking-paths'],
-      ['Studying','Mechanics as argument','#/games'],
-      ['Lineage','Borges — the garden as game','#/literature/labyrinths']
-    ]
-  },
-  {
-    id:'modeling', num:'14', nav:'3D', title:'3D Modeling', cls:'dark', flip:true,
-    kicker:'Thinking in volumes. Geometry with its gloves off.',
-    items:[
-      ['Building','The impossible coastline','#/modeling/impossible-coastline'],
-      ['Studying','The Platonic solids, by hand','#/mathematics'],
-      ['Tool','Blender, slowly','#/modeling']
-    ]
-  },
-  {
-    id:'video', num:'15', nav:'Video', title:'Video Editing', cls:'',
-    kicker:'Time as a material. The essay with a pulse.',
-    items:[
-      ['Planning','Essay film — The Aesthetics of Proof','#/video/essay-film'],
-      ['Method','The cut as punctuation','#/video'],
-      ['Study','Godard · Marker · Murch','#/video']
-    ]
-  },
-  {
-    id:'clothes', num:'16', nav:'Clothes', title:'Making Clothes', cls:'', flip:true,
-    kicker:'Pattern as logic. The body as the first constraint.',
-    items:[
-      ['Studying','Pattern drafting — the body in geometry','#/clothes/pattern-drafting'],
-      ['Making','First shirt, slowly','#/clothes'],
-      ['Repair','Mending before making','#/clothes']
-    ]
-  },
-  {
-    id:'jewelry', num:'17', nav:'Jewelry', title:'Making Jewelry', cls:'dark',
-    kicker:'The miniature. Metal with a memory.',
-    items:[
-      ['Studying','Casting methods, compared','#/jewelry/casting-methods'],
-      ['Making','First flask — lost wax','#/jewelry/casting-methods'],
-      ['Question','What does a mold know that the object forgets?','#/jewelry']
-    ]
-  },
-  {
-    id:'journal', num:'18', nav:'Journal', title:'Journal', cls:'', flip:true,
+  { id:'journal', num:'10', nav:'Journal', title:'Journal', group:'wordpage',
     kicker:'Occasional essays and fragments. Long-form when it earns it, short when it does not.',
     items:[
       ['Oct 2026','On Phronesis','#/journal/on-phronesis'],
       ['Sep 2026','Against Friction','#/journal/against-friction'],
+      ['Aug 2026','The Map and the Territory','#/journal'],
+      ['Jul 2026','Reading Slowly on Purpose','#/journal'],
       ['Archive','Everything written, in order','#/journal']
     ]
   },
-  {
-    id:'about', num:'19', nav:'About', title:'About', cls:'acid',
+  { id:'design', num:'11', nav:'Design', title:'Graphic Design', group:'imagetime',
+    kicker:'Visual rhetoric: grids, type, and the argument a layout makes before you read a word.',
+    items:[
+      ['Reading','Bringhurst — Typographic Style','#/design'],
+      ['Studying','The Swiss grid','#/design/grid-systems'],
+      ['Working','This site as specimen','#/about'],
+      ['Exercise','One poster per Journal essay','#/journal/on-phronesis'],
+      ['Principle','Hierarchy is ethos','#/design']
+    ]
+  },
+  { id:'drawing', num:'12', nav:'Drawing', title:'Drawing', group:'imagetime',
+    kicker:'Slowed looking. The hand as an instrument of attention.',
+    items:[
+      ['Daily','The sketchbook — dated, uncurated','#/drawing/sketchbook'],
+      ['Method','Construction before contour','#/drawing'],
+      ['Source','Ruskin — The Elements of Drawing','#/drawing'],
+      ['Study','Hands, five days of them','#/drawing/sketchbook'],
+      ['Fight','Against symbols','#/drawing']
+    ]
+  },
+  { id:'video', num:'13', nav:'Video', title:'Video Editing', group:'imagetime',
+    kicker:'Time as a material. The essay with a pulse.',
+    items:[
+      ['Planning','Essay film — The Aesthetics of Proof','#/video/essay-film'],
+      ['Method','The cut as punctuation','#/video'],
+      ['Study','Godard · Marker · Murch','#/video'],
+      ['Plan','A process film on lost-wax casting','#/jewelry/casting-methods'],
+      ['Rule','Rhythm before content','#/video']
+    ]
+  },
+  { id:'modeling', num:'14', nav:'3D', title:'3D Modeling', group:'imagetime',
+    kicker:'Thinking in volumes. Geometry with its gloves off.',
+    items:[
+      ['Building','The impossible coastline','#/modeling/impossible-coastline'],
+      ['Studying','The Platonic solids, by hand','#/mathematics'],
+      ['Tool','Blender, slowly','#/modeling'],
+      ['Note','Why quads','#/modeling'],
+      ['Scene','A room with the lamp in it','#/modeling']
+    ]
+  },
+  { id:'games', num:'15', nav:'Games', title:'Game Development', group:'handobject',
+    kicker:'Games as systems that argue. Where the logic and the fiction share a room.',
+    items:[
+      ['Designing','The Forking Path — a design document','#/games/forking-paths'],
+      ['Studying','Mechanics as argument','#/games'],
+      ['Lineage','Borges — the garden as game','#/literature/labyrinths'],
+      ['Note','The rules are the ethics','#/games'],
+      ['Puzzle','Z/12Z as a lock','#/mathematics/number-theory']
+    ]
+  },
+  { id:'clothes', num:'16', nav:'Clothes', title:'Making Clothes', group:'handobject',
+    kicker:'Pattern as logic. The body as the first constraint.',
+    items:[
+      ['Studying','Pattern drafting — the body in geometry','#/clothes/pattern-drafting'],
+      ['Making','First shirt, slowly','#/clothes'],
+      ['Repair','Mending before making','#/clothes'],
+      ['Note','Why darts are triangles','#/clothes/pattern-drafting'],
+      ['Rule','Learn the why of every seam','#/clothes']
+    ]
+  },
+  { id:'jewelry', num:'17', nav:'Jewelry', title:'Making Jewelry', group:'handobject',
+    kicker:'The miniature. Metal with a memory.',
+    items:[
+      ['Studying','Casting methods, compared','#/jewelry/casting-methods'],
+      ['Making','First flask — lost wax','#/jewelry/casting-methods'],
+      ['Question','What does a mold know that the object forgets?','#/jewelry'],
+      ['Note','Why the sprues branch','#/jewelry'],
+      ['Rule','Patience at every temperature','#/jewelry']
+    ]
+  },
+  { id:'about', num:'18', nav:'About', title:'About', group:'record',
     kicker:'Tyler Miranda. Independent student of philosophy, mathematics, literature — and the crafts. This site is the ledger.',
     items:[
       ['Contact','tyler@meresophist.xyz',null],
       ['Elsewhere','Are.na · GitHub · Letterboxd',null],
-      ['Colophon','Set in Instrument Serif & Courier Prime',null]
+      ['Design','Five palettes, one meander','#/about'],
+      ['Colophon','Instrument Serif & Courier Prime',null],
+      ['The name','Meresophist, explained','#/about']
     ]
   }
+];
+
+const GROUPS = [
+  { id:'letters', num:'01', title:'Letters',
+    line:'The reading room — arguments, proofs, and the histories they arrive in. The disciplines that ask what is true and how to live.',
+    topics:['philosophy','mathematics','literature','languages','authors'] },
+  { id:'wordpage', num:'02', title:'Word & Page',
+    line:'Writing as a craft: from the sentence to the sale, from the constraint to the published note.',
+    topics:['poetry','copywriting','atelier','journal'] },
+  { id:'imagetime', num:'03', title:'Image & Time',
+    line:'Making things visible and keeping them in motion — grids, marks, cuts, and volumes.',
+    topics:['design','drawing','video','modeling'] },
+  { id:'handobject', num:'04', title:'Hand & Object',
+    line:'The made thing, and the systems that behave like objects: cloth, metal, and rules that argue.',
+    topics:['games','clothes','jewelry'] },
+  { id:'record', num:'05', title:'The Record',
+    line:'The ledger itself — what is current, and who is keeping it.',
+    topics:['tabularium','about'] }
 ];
 
 /* ============================================================
@@ -1005,25 +867,39 @@ tabularium:{
       ['Planning','Committed, being boarded out'],
       ['Queued','Committed to, not yet begun']
     ]},
-    {h:'Active entries'},
+{h:'Active entries'},
+    {p:'Grouped the way the index is grouped — five shelves, one ledger.'},
+    {h:'01 · Letters'},
     {log:[
       {d:'Oct 2026', t:'Aristotle — Nicomachean Ethics', x:'Philosophy · Reading · Book VI, on phronesis', r:'#/philosophy/aristotle'},
       {d:'Oct 2026', t:'The Ethics of Digital Identity', x:'Philosophy · Writing · draft, ~2,400 words', r:'#/philosophy/digital-identity'},
       {d:'Oct 2026', t:'Borges — Labyrinths', x:'Literature · Reading · infinity, mirrors, paradox', r:'#/literature/labyrinths'},
+      {d:'Sep 2026', t:'Wallace — Infinite Jest (reread)', x:'Literature · Reading · addiction and entertainment', r:'#/literature/infinite-jest'},
+      {d:'Sep 2026', t:'Number Theory — Hardy & Wright', x:'Mathematics · Studying · ch. 3, congruences', r:'#/mathematics/number-theory'},
+      {d:'Sep 2026', t:'Ancient Greek — the long approach', x:'Languages · Studying · alphabet and accents', r:'#/languages/ancient-greek'},
+      {d:'Planned', t:'The Aesthetics of Proof', x:'Mathematics · Building · visual essay', r:'#/mathematics/aesthetics-of-proof'}
+    ]},
+    {h:'02 · Word & Page'},
+    {log:[
       {d:'Oct 2026', t:'The Cartographer of Impossible Maps', x:'Atelier · Fiction · second draft', r:'#/atelier/cartographer'},
       {d:'Oct 2026', t:'The swipe file', x:'Copywriting · Building · forty entries, annotated', r:'#/copywriting/swipe-file'},
-      {d:'Oct 2026', t:'Ancient Greek — the long approach', x:'Languages · Studying · alphabet and accents', r:'#/languages/ancient-greek'},
-      {d:'Oct 2026', t:'Prosody notebook', x:'Poetry · Studying · meter, stress, breath', r:'#/poetry/prosody'},
-      {d:'Oct 2026', t:'Lost-wax casting', x:'Jewelry · Studying · first flask', r:'#/jewelry/casting-methods'},
-      {d:'Oct 2026', t:'Daily drawing studies', x:'Drawing · Practicing · hands, chairs, corners', r:'#/drawing/sketchbook'},
-      {d:'Sep 2026', t:'Number Theory — Hardy & Wright', x:'Mathematics · Studying · ch. 3, congruences', r:'#/mathematics/number-theory'},
-      {d:'Sep 2026', t:'Wallace — Infinite Jest (reread)', x:'Literature · Reading · addiction and entertainment', r:'#/literature/infinite-jest'},
+      {d:'Oct 2026', t:'Prosody notebook', x:'Poetry · Studying · meter, stress, breath', r:'#/poetry/prosody'}
+    ]},
+    {h:'03 · Image & Time'},
+    {log:[
       {d:'Sep 2026', t:'Bringhurst — Typographic Style', x:'Design · Reading · chapter by chapter', r:'#/design'},
+      {d:'Oct 2026', t:'Daily drawing studies', x:'Drawing · Practicing · hands, chairs, corners', r:'#/drawing/sketchbook'},
+      {d:'Sep 2026', t:'The impossible coastline', x:'3D Modeling · Building · first mesh', r:'#/modeling/impossible-coastline'},
+      {d:'Planned', t:'Essay film — The Aesthetics of Proof', x:'Video · Planning · storyboard', r:'#/video/essay-film'}
+    ]},
+    {h:'04 · Hand & Object'},
+    {log:[
       {d:'Sep 2026', t:'The Forking Path', x:'Games · Designing · design document', r:'#/games/forking-paths'},
       {d:'Sep 2026', t:'The bodice block', x:'Clothes · Studying · pattern drafting', r:'#/clothes/pattern-drafting'},
-      {d:'Sep 2026', t:'The impossible coastline', x:'3D Modeling · Building · first mesh', r:'#/modeling/impossible-coastline'},
-      {d:'Planned', t:'Essay film — The Aesthetics of Proof', x:'Video · Planning · storyboard', r:'#/video/essay-film'},
-      {d:'Planned', t:'The Aesthetics of Proof', x:'Mathematics · Building · visual essay', r:'#/mathematics/aesthetics-of-proof'},
+      {d:'Oct 2026', t:'Lost-wax casting', x:'Jewelry · Studying · first flask', r:'#/jewelry/casting-methods'}
+    ]},
+    {h:'05 · The Record'},
+    {log:[
       {d:'Ongoing', t:'meresophist.xyz', x:'Site · Building · this tabularium', r:'#/about'}
     ]},
     {fig:{t:'The life of an entry', n:'Queued → active → struck → archived — placeholder for the lifecycle.'}}
@@ -1955,42 +1831,56 @@ function $$(s){ return Array.prototype.slice.call(document.querySelectorAll(s));
 
 var home = $('#home'), page = $('#page'), indicator = $('#indicator'), progress = $('#progress'), skip = $('#skip');
 
-/* ---------- home panels ---------- */
-function buildPanels(){
-  var frag = document.createDocumentFragment();
-  TOPICS.forEach(function(t){
-    var sec = document.createElement('section');
-    sec.className = 'panel' + (t.cls ? ' ' + t.cls : '');
-    sec.id = 'p-' + t.id;
-    sec.setAttribute('data-num', t.num);
-    sec.setAttribute('data-title', t.nav);
-    var items = t.items.map(function(it){
-      var inner = '<span class="k">' + it[0] + '</span><span class="v">' + it[1] + '</span>';
-      return '<li>' + (it[2] ? '<a href="' + it[2] + '">' + inner + '</a>' : '<span>' + inner + '</span>') + '</li>';
-    }).join('');
-    sec.innerHTML =
-      '<div class="panel-top"><span class="num">' + t.num + '</span>' +
-      '<a class="enter" href="#/' + t.id + '">Enter <span class="arw">↗</span></a></div>' +
-      '<div class="topic-grid' + (t.flip ? ' flip' : '') + '">' +
-        '<h2 class="topic-title">' + t.title + '</h2>' +
-        '<div class="topic-side">' +
-          '<p class="topic-kicker">' + t.kicker + '</p>' +
-          '<ul class="topic-items">' + items + '</ul>' +
-        '</div>' +
-      '</div>' +
-      '<div class="panel-bot"><span>' + t.num + ' / ' + TOTAL + '</span><span>Revised 09 Oct 2026</span></div>';
-    frag.appendChild(sec);
-  });
-  home.appendChild(frag);
+/* ---------- home index (grouped masonry) ---------- */
+var TOPICS_BY_ID = {};
+TOPICS.forEach(function(t){ TOPICS_BY_ID[t.id] = t; });
+
+function cardHTML(t){
+  var items = t.items.map(function(it){
+    var inner = '<span class="k">' + it[0] + '</span><span class="v">' + it[1] + '</span>';
+    return '<li>' + (it[2] ? '<a href="' + it[2] + '">' + inner + '</a>' : '<span>' + inner + '</span>') + '</li>';
+  }).join('');
+  return '<article class="topic-card" id="p-' + t.id + '">' +
+    '<header class="card-head"><span class="num">' + t.num + '</span>' +
+      '<h3 class="card-title"><a href="#/' + t.id + '">' + t.title + '</a></h3>' +
+      '<a class="card-enter" href="#/' + t.id + '" aria-label="Open ' + t.title + '">↗</a></header>' +
+    '<p class="card-kicker">' + t.kicker + '</p>' +
+    '<ul class="card-items">' + items + '</ul>' +
+    '<a class="card-more" href="#/' + t.id + '">All entries ↗</a>' +
+  '</article>';
 }
 
-var panels = [];
+function buildIndex(){
+  var root = document.getElementById('index');
+  if(!root) return;
+  var frag = document.createDocumentFragment();
+  GROUPS.forEach(function(g){
+    var sec = document.createElement('section');
+    sec.className = 'group snap-sec';
+    sec.id = 'g-' + g.id;
+    sec.setAttribute('data-num', g.num);
+    sec.setAttribute('data-title', g.title);
+    var cards = g.topics.map(function(id){ return cardHTML(TOPICS_BY_ID[id]); }).join('');
+    sec.innerHTML =
+      '<header class="group-head">' +
+        '<div class="group-eyebrow"><span class="num">' + g.num + '</span><span>' + g.topics.length + ' topics</span></div>' +
+        '<h2 class="group-title">' + g.title + '</h2>' +
+        '<p class="group-line">' + g.line + '</p>' +
+      '</header>' +
+      '<div class="masonry">' + cards + '</div>';
+    frag.appendChild(sec);
+  });
+  root.appendChild(frag);
+}
+
+var sections = [];
 
 function buildIndicator(){
-  indicator.innerHTML = panels.map(function(p){
-    var n = p.getAttribute('data-num') || '';
-    var t = p.getAttribute('data-title') || '';
-    return '<button type="button" data-target="' + p.id + '"><span>' + n + '</span> ' + t + '</button>';
+  var entries = [{ id:'p-index', n:'00', t:'Index' }].concat(GROUPS.map(function(g){
+    return { id:'g-' + g.id, n:g.num, t:g.title };
+  }));
+  indicator.innerHTML = entries.map(function(e){
+    return '<button type="button" data-target="' + e.id + '"><span>' + e.n + '</span> ' + e.t + '</button>';
   }).join('');
   indicator.addEventListener('click', function(e){
     var b = e.target.closest ? e.target.closest('button') : null;
@@ -2004,11 +1894,11 @@ function buildIndicator(){
 
 var lastActive = null;
 function spy(){
-  var mid = window.innerHeight * 0.55;
+  var mid = window.innerHeight * 0.4;
   var act = null;
-  for(var i = 0; i < panels.length; i++){
-    var r = panels[i].getBoundingClientRect();
-    if(r.top <= mid) act = panels[i];
+  for(var i = 0; i < sections.length; i++){
+    var r = sections[i].getBoundingClientRect();
+    if(r.top <= mid) act = sections[i];
   }
   if(act === lastActive) return;
   lastActive = act;
@@ -2047,9 +1937,11 @@ function setScrollTop(){
 }
 
 function markNav(id){
+  var gid = null;
+  TOPICS.forEach(function(t){ if(t.id === id) gid = t.group; });
   $$('.topnav a').forEach(function(a){
     var href = a.getAttribute('href') || '';
-    if(id && href === '#/' + id) a.setAttribute('aria-current','page');
+    if(gid && href === '#g-' + gid) a.setAttribute('aria-current','page');
     else a.removeAttribute('aria-current');
   });
 }
@@ -2386,11 +2278,17 @@ function initMotion(){
     gsap.to('.ht-2', { yPercent:52, ease:'none', scrollTrigger:{ trigger:'#p-index', start:'top top', end:'bottom top', scrub:true } });
     gsap.to('.hero-lede', { yPercent:34, ease:'none', scrollTrigger:{ trigger:'#p-index', start:'top top', end:'bottom top', scrub:true } });
 
-    panels.forEach(function(p){
-      var title = p.querySelector('.topic-title');
-      var side = p.querySelector('.topic-side');
-      if(title) gsap.fromTo(title, { y:44 }, { y:-30, ease:'none', scrollTrigger:{ trigger:p, start:'top bottom', end:'bottom top', scrub:true } });
-      if(side) gsap.fromTo(side, { y:64 }, { y:-16, ease:'none', scrollTrigger:{ trigger:p, start:'top bottom', end:'bottom top', scrub:true } });
+    GROUPS.forEach(function(g){
+      var sec = document.getElementById('g-' + g.id);
+      if(!sec) return;
+      var head = sec.querySelector('.group-head');
+      var cards = sec.querySelectorAll('.topic-card');
+      if(head){
+        gsap.from(head, { y:34, opacity:0, duration:.7, ease:'power2.out', scrollTrigger:{ trigger:sec, start:'top 82%', toggleActions:'play none none none' } });
+      }
+      if(cards.length){
+        gsap.from(cards, { y:42, opacity:0, duration:.7, stagger:.07, ease:'power2.out', scrollTrigger:{ trigger:sec, start:'top 76%', toggleActions:'play none none none' } });
+      }
     });
 
     var skewTo = gsap.quickTo('.marquee', 'skewX', { duration:.5, ease:'power3' });
@@ -2429,8 +2327,8 @@ function initMotion(){
 
 /* ---------- init ---------- */
 applyTheme(themeIndex());
-buildPanels();
-panels = $$('.panel');
+buildIndex();
+sections = $$('.snap-sec');
 buildIndicator();
 bind();
 navFade();
