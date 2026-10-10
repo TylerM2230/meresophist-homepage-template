@@ -1,34 +1,48 @@
 # Changelog — meresophist.xyz
 
-Tabulated record of the home restructure (grouped masonry index, snap + GSAP disclosure, more room per section). Final state: commit `24dd9e7`.
+Tabulated record of the split-pane / Filipino-type / voice refinement.
+
+## This round — split-pane, scroll-hijack, Filipino type, voice
 
 | # | Area | Change | Status |
 |---|------|--------|--------|
-| 1 | Typography | Courier Prime replaces JetBrains Mono (prior round) | done |
-| 2 | Palettes | 5 switchable themes (Papyrus/Pompeii/Marble/Attic/Nocturne) + topbar cycler | done |
-| 3 | Motif | Greek meander strip (top + subpage divider), pixel-noise grain, meander favicon | done |
+| 1 | **Structure** | Single `index.html` → `index.html` + `styles.css` + `content.js` + `app.js` + `fonts/`. No build step, no toolchain; still opens from `file://` (classic `<script>`/`<link>`, content as a plain data file loaded first). | done |
+| 2 | **Split-pane** | Subpages → prose left (66ch measure) + sticky "Entries" ledger rail right (`7fr : 4fr`, `--shell:1360px`, `--gutter:clamp(56px,6vw,96px)`, rail `position:sticky` + `overscroll-behavior:contain`). Rail replaces the old `.toc` and collapses to a `<details>` accordion above the prose at ≤860px. | done |
+| 3 | **Subject + title** | New `.subject-line` (leader rule → tala → group name in Cubao → boxed mono num) + enlarged title with italic connectives/ampersands echoing the hero's roman/italic mix. Header spans both columns; split begins below the meta band. | done |
+| 4 | **Scroll-hijack** | GSAP wheel/touch/keyboard-scrubbed drift transition between topics (clone outgoing `.sub` to a `.sub-exit` overlay, locked native scroll, 900ms `autoFinish`); home↔subpage variants restore `lastHomeScroll`; reduced-motion / no-GSAP fall back to instant swap. | done |
+| 5 | **Filipino type** | Baybayin "tala" (ᜆᜎ, "star · record · list") seal in favicon + subject-line + rail-head + figure glyphs (Noto Sans Tagalog via Google Fonts); Cubao Free (self-hosted, Aaron Amar — jeepney sign-painter) for the subject eyebrow + Tabularium/Record titles. | done |
+| 6 | **Voice** | Full prose pass — less stinted, less logocentric, in a merged Jung / Spinoza / Deleuze–Guattari register: hero, all 5 group lines, all 18 topic kickers + items, the Tabularium, and philosophy/mathematics/literature/about. Logocentric tics retired ("Method"→practice, "Rule"→vow, "Principle"→bearing, "argue/prove/receipts"→embodied forms). | done |
+| 7 | **A11y** | `role="status"` live region + `.visually-hidden` utility, focus to the subpage `<h1>`, reduced-motion guards on the transition, contrast bumps on opacity-heavy mono labels, skip-link target, `theme-color`/`color-scheme` fixed, passive listeners, transform-only hovers. | done |
+| 8 | **Microinteractions** | Transform-only row hovers + flame margin-tick, indicator `scaleX` (no width reflow), masked title reveal, `#theme-veil` cross-fade on palette change, marquee skew moved to an inner wrapper (±7°, sign corrected), sticky-rail scroll-spy. | done |
+| 9 | **Verification** | `node --check` + DOM-shim boot (`test.cjs`): 18 topics / 5 groups, 42/42 routes render, 0 unresolved `#/` links. | done |
+| 10 | **Repo** | Committed on top of `d019c9b`. | done |
+
+## Structure
+
+```
+index.html   — shell + font links + script tags
+styles.css   — tokens, layout, type, motion
+content.js   — TOPICS / GROUPS / PAGES (all prose as plain data)
+app.js       — renderer, router, scroll-hijack transition, GSAP motion
+fonts/       — CubaoFree2-Regular.ttf (self-hosted Filipino display)
+test.cjs     — Node DOM-shim boot + route/link verification
+```
+
+Fonts: Instrument Serif + Courier Prime + Noto Sans Tagalog (Google Fonts, OFL); Cubao Free (Aaron Amar / MadFonts, free for commercial use, self-hosted). The tala favicon is an inline SVG (8-ray sun) on paper.
+
+---
+
+## Previous round — home restructure
+
+| # | Area | Change | Status |
+|---|------|--------|--------|
+| 1 | Typography | Courier Prime replaces JetBrains Mono | done |
+| 2 | Palettes | 5 switchable themes + topbar cycler | done |
+| 3 | Motif | Greek meander strip, pixel-noise grain, meander favicon | done |
 | 4 | Motion | GSAP parallax (hero / marquee velocity / subpage) | done |
-| 5 | **Home IA** | 19 sticky panels → hero + **5 grouped sections**: Letters / Word & Page / Image & Time / Hand & Object / The Record (the missing throughline) | done |
-| 6 | **Topic view** | Topics → **masonry grid** of cards (`columns`), headings top-left (`.card-head`), 5 entries + "All entries ↗" per card | done |
-| 7 | **Tabularium** | Home table removed; endeavors distributed into grouped cards; Tabularium page "Active entries" regrouped under 5 subject headings | done |
-| 8 | Nav | Topnav + right rail navigate the 5 groups (6 items, no scroll); `aria-current` highlights the current topic's group via a topic→group map | done |
-| 9 | **Snap** | `scroll-snap-type: y proximity` + `scroll-padding-top` on root; `scroll-snap-align` on hero/groups; GSAP `scrollTo` for rail/topnav jumps | done |
-| 10 | **Disclosure** | GSAP `gsap.from` staggered reveal of group heads + cards on scroll into view; degrades to static without JS / under reduced motion | done |
-| 11 | Data | `TOPICS` rewritten (18 cards, grouped, 5 items each) + new `GROUPS` array — delegated to subagent, spliced in | done |
-| 12 | Data | Tabularium "Active entries" regrouped into 5 headings — delegated to subagent, spliced in | done |
-| 13 | Verification | `node --check` + DOM-shim boot across routes; 18 cards / 5 groups; 0 unresolved links; 0 leftover `.panel`/table references | done |
-| 14 | Repo | Committed `24dd9e7` on top of `9217ee5` | done |
-
-## Structure of the new home
-
-```
-hero (full viewport, snap target)
-└─ #index
-   ├─ 01 · Letters        → Philosophy, Mathematics, Literature, Languages & Philology, Authors
-   ├─ 02 · Word & Page    → Poetry & Writing, Copywriting, Atelier, Journal
-   ├─ 03 · Image & Time   → Graphic Design, Drawing, Video Editing, 3D Modeling
-   ├─ 04 · Hand & Object  → Game Development, Making Clothes, Making Jewelry
-   └─ 05 · The Record     → Tabularium, About
-```
-
-Each topic card: number · title (top-left) · ↗ · kicker · 5 entry rows · "All entries ↗". The right rail and topbar snap to the five shelves.
+| 5 | Home IA | 19 sticky panels → hero + 5 grouped sections | done |
+| 6 | Topic view | masonry grid of cards, 5 entries + "All entries ↗" per card | done |
+| 7 | Tabularium | active entries regrouped under 5 subject headings | done |
+| 8 | Nav | topnav + right rail navigate 5 groups | done |
+| 9 | Snap | scroll-snap + GSAP scrollTo | done |
+| 10 | Disclosure | GSAP staggered reveal on scroll | done |
