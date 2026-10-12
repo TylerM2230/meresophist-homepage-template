@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>meresophist.xyz — Tyler Aragon Miranda</title>
 <meta name="description" content="A public record of learning — philosophy, mathematics, literature, and the crafts between them. The tabularium of Tyler Aragon Miranda: read slowly, made in the open.">
-<meta name="theme-color" content="#eceae3">
-<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0f172a">
+<meta name="color-scheme" content="dark">
 <meta property="og:title" content="meresophist.xyz — Tyler Aragon Miranda">
 <meta property="og:description" content="A public record of learning — philosophy, mathematics, literature, and the crafts between them. Read slowly, made in the open.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23eceae3'/%3E%3Cg stroke='%23ff3b00' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='16' y1='3' x2='16' y2='7'/%3E%3Cline x1='25.2' y1='6.8' x2='21' y2='11'/%3E%3Cline x1='29' y1='16' x2='25' y2='16'/%3E%3Cline x1='25.2' y1='25.2' x2='21' y2='21'/%3E%3Cline x1='16' y1='29' x2='16' y2='25'/%3E%3Cline x1='6.8' y1='25.2' x2='11' y2='21'/%3E%3Cline x1='3' y1='16' x2='7' y2='16'/%3E%3Cline x1='6.8' y1='6.8' x2='11' y2='11'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='6.5' fill='%23ff3b00'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="assets/sun-favicon.png">
+<link rel="apple-touch-icon" href="assets/sun.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Tagalog&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Tagalog&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,7 +28,12 @@
 <div class="visually-hidden" id="live" role="status" aria-live="polite"></div>
 
 <header class="topbar">
-  <a class="brand" href="#/">meresophist<span style="opacity:.5">.xyz</span></a>
+  <a class="brand" href="#/">
+    <span class="brand-mark" aria-hidden="true">
+      <img src="assets/sun.png" alt="" class="brand-sun" width="24" height="24" />
+    </span>
+    meresophist<span style="opacity:.6">.xyz</span>
+  </a>
   <nav class="topnav" aria-label="Sections">
     <a href="#index" data-jump>Index</a>
     <a href="#g-letters" data-jump>Letters</a>
@@ -36,7 +42,12 @@
     <a href="#g-handobject" data-jump>Hand &amp; Object</a>
     <a href="#g-record" data-jump>The Record</a>
   </nav>
-  <button type="button" class="theme-btn" id="theme-btn">Palette · Papyrus</button>
+  <div class="theme-picker" id="theme-picker">
+    <button type="button" class="theme-toggle" id="theme-btn" aria-haspopup="true" aria-expanded="false" aria-label="Choose a palette" title="Choose a palette">
+      <span class="theme-dots" id="theme-dots" aria-hidden="true"></span>
+    </button>
+    <div class="theme-menu" id="theme-menu" role="menu" aria-label="Palettes" hidden></div>
+  </div>
 </header>
 
 <div class="rail" aria-hidden="true">MERESOPHIST · TYLER ARAGON MIRANDA · MMXXVI</div>
@@ -49,22 +60,39 @@
 
   <!-- 01 · HERO ------------------------------------------------>
   <section class="hero snap-sec" id="p-index" data-title="Index">
+    <div class="hero-clouds" aria-hidden="true">
+      <span class="cloud-slot cloud-l cloud-l1"><img class="cloud-img" src="assets/cloud-2.png" alt="" /></span>
+      <span class="cloud-slot cloud-l cloud-l2"><img class="cloud-img" src="assets/cloud-1.png" alt="" /></span>
+      <span class="cloud-slot cloud-l cloud-l3"><img class="cloud-img" src="assets/cloud-6.png" alt="" /></span>
+      <span class="cloud-slot cloud-r cloud-r1"><img class="cloud-img" src="assets/cloud-5.png" alt="" /></span>
+      <span class="cloud-slot cloud-r cloud-r2"><img class="cloud-img" src="assets/cloud-3.png" alt="" /></span>
+      <span class="cloud-slot cloud-r cloud-r3"><img class="cloud-img" src="assets/cloud-7.png" alt="" /></span>
+    </div>
     <div class="hero-top">
-      <span class="num">00</span>
-      <span>Index — Tyler Aragon Miranda</span>
-      <span class="hero-baybayin" aria-hidden="true">ᜀᜇᜎ᜔ ᜐᜓᜎᜆ᜔ ᜄᜏ</span>
+      <div class="hero-top-left">
+        <span class="num">00</span>
+        <span>Index — Tyler Aragon Miranda</span>
+      </div>
+      <div class="hero-top-right">
+        <img src="assets/pixel-tala-star.svg" alt="" class="hero-top-tala" width="22" height="22" />
+        <span class="hero-baybayin" aria-hidden="true">ᜀᜇᜎ᜔ ᜐᜓᜎᜆ᜔ ᜄᜏ</span>
+      </div>
     </div>
 
     <div class="hero-body">
-      <h1 class="hero-title">
-        <span class="ht-1">mere</span>
-        <span class="ht-2">sophist</span>
-      </h1>
+      <div class="hero-lockup">
+        <span class="hero-sun-turn">
+          <img src="assets/sun.png" alt="The meresophist sun" class="hero-sun" width="150" height="150" />
+        </span>
+        <h1 class="hero-title">
+          <span class="ht-1">mere</span>
+          <span class="ht-2">sophist</span>
+        </h1>
+      </div>
       <p class="hero-lede">A public record of learning — philosophy, mathematics, literature, and the crafts that live in the rooms between them. Kept on shelves so the archive has a spine, and read slowly so the reading has a pulse, and made in the open and revised without shame. Nothing here pretends to be finished; everything here is willing to be turned over in your hands.</p>
       <div class="hero-meta">
         <span>Begun MMXXVI</span>
         <span>Independent study · by hand</span>
-        <span>Twenty-one topics · five shelves</span>
         <span>Come in ↓</span>
       </div>
     </div>

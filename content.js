@@ -6,212 +6,254 @@
 const TOPICS = [
   { id:'tabularium', num:'01', nav:'Tabularium', title:'Tabularium', group:'record',
     kicker:'The public record of what I am thinking with right now — the books on the desk, the drafts breathing in the folder, the questions still warm.',
+    desc:'The Tabularium is the active working ledger of meresophist.xyz — an open registry modeled after the Roman public archives, updated weekly as thoughts take shape, books are read, and projects are forged. Rather than hiding abandoned drafts or silent pivots, every movement is logged in the open so the intellectual journey leaves a permanent, accountable trail.',
+    focus:'Working in public as intellectual devotion: nothing hidden, nothing deleted, every struck row a milestone.',
     items:[
-      ['Active','Twenty-one living entries across five shelves','#/tabularium'],
-      ['Cadence','Weekly-ish, kept in the open','#/tabularium'],
+      ['Active','The living ledger — kept in the open, logged and timestamped','#/tabularium'],
+      ['Cadence','Weekly-ish, kept in the open — unvarnished working ledger','#/tabularium'],
       ['Legend','Reading · Writing · Studying · Building · the hands at work','#/tabularium'],
       ['Motion','Entries move; the struck rows are the record of the year','#/tabularium'],
-      ['Open','The whole ledger, gathered by subject','#/tabularium']
+      ['Open','The whole ledger, gathered by subject across five shelves','#/tabularium']
     ]
   },
   { id:'philosophy', num:'02', nav:'Philosophy', title:'Philosophy', group:'letters',
     kicker:'Ethics, metaphysics, and how a thought is built to stand and to move. Read slowly, on purpose, with the whole body.',
+    desc:'Inquiry into virtue, practical wisdom, and the architecture of human flourishing. Spanning Aristotle’s Nicomachean Ethics, Epictetus’ Stoic discipline, Spinozist immanence, and contemporary digital ethics, this shelf investigates how ideas are not merely debated in seminars but inhabited in daily action.',
+    focus:'What constitutes a well-lived life when digital acceleration constantly fractures attention?',
     items:[
-      ['Reading','Aristotle — Nicomachean Ethics, Book VI','#/philosophy/aristotle'],
-      ['Writing','The Ethics of Digital Identity','#/philosophy/digital-identity'],
-      ['Question','What does it mean to live well, now?','#/philosophy'],
-      ['Rereading','Epictetus — Discourses','#/philosophy'],
-      ['Practice','Close reading, then the slow answering back','#/philosophy']
+      ['Reading','Aristotle — Nicomachean Ethics, Book VI: on phronesis and practical wisdom','#/philosophy/aristotle'],
+      ['Writing','The Ethics of Digital Identity — a 2,400-word draft on persona in public','#/philosophy/digital-identity'],
+      ['Question','What does it mean to live well, now? Investigating ancient ethics for modern life','#/philosophy'],
+      ['Rereading','Epictetus — Discourses: Stoic discipline of perception and voluntary action','#/philosophy'],
+      ['Practice','Close reading, then the slow answering back in notebooks and prose','#/philosophy']
     ]
   },
   { id:'mathematics', num:'03', nav:'Mathematics', title:'Mathematics', group:'letters',
     kicker:'Number theory, the beauty of proof, and the strange comfort of things that are certainly true — a place where the mind can finally rest its weight.',
+    desc:'A deep exploration of classical number theory, modular arithmetic, Euclid’s prime infinity, and Cantor’s transfinite diagonals. Mathematics is approached here not as cold calculation, but as an aesthetic and philosophical discipline — where rigorous proof provides an enduring sanctuary of unshakeable clarity.',
+    focus:'The aesthetics of proof: the rare intellectual joy of arriving at an incontrovertible truth by sheer reasoning.',
     items:[
-      ['Studying','Hardy & Wright — Number Theory, ch. 3','#/mathematics/number-theory'],
-      ['Building','The Aesthetics of Proof — a visual essay','#/mathematics/aesthetics-of-proof'],
-      ['Fascination','Cantor, infinity, and the diagonal turn of thought','#/mathematics'],
-      ['Notebook','Euclid, Book IX, Proposition 20','#/mathematics'],
-      ['Adjacent','Philosophy of mathematics','#/mathematics']
+      ['Studying','Hardy & Wright — Number Theory, ch. 3: congruences and modular arithmetic','#/mathematics/number-theory'],
+      ['Building','The Aesthetics of Proof — a visual essay on the architecture of truth','#/mathematics/aesthetics-of-proof'],
+      ['Fascination','Cantor, infinity, and the diagonal turn of thought across transfinite sets','#/mathematics'],
+      ['Notebook','Euclid, Book IX, Proposition 20: the eternal abundance of primes','#/mathematics'],
+      ['Adjacent','Philosophy of mathematics: why mathematical reality feels discovered rather than invented','#/mathematics']
     ]
   },
   { id:'literature', num:'04', nav:'Literature', title:'Literature', group:'letters',
     kicker:'Novels, labyrinths, and the sentences I keep returning to — the ones that stay warm, that hold a room even after the book is shut.',
+    desc:'Close readings of Borges’ infinite libraries, Calvino’s crystalline cities, Pessoa’s disquieted heteronyms, and Wallace’s encyclopedic examinations of modern entertainment and despair. Literature here is treated as an apparatus for exploring consciousness, spatial imagination, and the labyrinth of human memory.',
+    focus:'How the structural architecture of a novel alters the neural and emotional state of the reader.',
     items:[
-      ['Reading','Borges — Labyrinths','#/literature/labyrinths'],
-      ['Rereading','Wallace — Infinite Jest','#/literature/infinite-jest'],
-      ['Queued','Sebald — The Rings of Saturn','#/literature'],
-      ['Revisit','Calvino — Invisible Cities','#/literature/calvino'],
+      ['Reading','Borges — Labyrinths: infinity, mirrors, paradox, and the library as cosmos','#/literature/labyrinths'],
+      ['Rereading','Wallace — Infinite Jest: addiction, entertainment, and the ethics of wanting','#/literature/infinite-jest'],
+      ['Queued','Sebald — The Rings of Saturn: wandering across Suffolk and historical trauma','#/literature'],
+      ['Revisit','Calvino — Invisible Cities: cities of memory, desire, and signs','#/literature/calvino'],
       ['Look for','The shape a book takes, and what it does to the body reading','#/literature']
     ]
   },
   { id:'languages', num:'05', nav:'Languages', title:'Languages & Philology', group:'letters',
     kicker:'The history of words as a kind of time travel; grammar as the shape of a mind — how each tongue cuts the world differently, and loves it differently.',
+    desc:'Historical linguistics, comparative grammar, Ancient Greek philology, and Austronesian etymologies including Baybayin and Tagalog roots. Every language is an ancient operating system that carves reality along unique joints, preserving philosophical intuitions that modern English cannot capture in a single term.',
+    focus:'Philological archaeology: retrieving untranslatable concepts that reveal lost ways of feeling and knowing.',
     items:[
-      ['Studying','Ancient Greek — the long approach','#/languages/ancient-greek'],
-      ['Collecting','The etymology notebook — one word daily','#/languages/etymology'],
-      ['Question','What does a language know that its speakers forget?','#/languages'],
-      ['Plan','One living language, still undecided — grammar felt in the mouth','#/languages'],
-      ['Connection','Why phronesis has no translation','#/philosophy/aristotle']
+      ['Studying','Ancient Greek — the long approach: morphology, aspect, and the voice of Homer','#/languages/ancient-greek'],
+      ['Collecting','The etymology notebook — one word daily traced back to its Indo-European root','#/languages/etymology'],
+      ['Question','What does a language know that its speakers forget? Grammatical archaeology','#/languages'],
+      ['Plan','One living language, still undecided — grammar felt in the mouth and ear','#/languages'],
+      ['Connection','Why phronesis has no modern translation: practical wisdom as lived virtue','#/philosophy/aristotle']
     ]
   },
   { id:'poetry', num:'06', nav:'Poetry', title:'Poetry & Writing', group:'wordpage',
     kicker:'The sentence as a machine and the line as a unit of breath. Craft studied the way one studies a trade — in the hands, daily, until it becomes the body.',
+    desc:'The mechanics of verse: prosody, syllabic stress, breath control, and compression. Investigating how line breaks operate like musical notation, how imagery can be stripped of excess adjectives to achieve startling tensile strength, and how rhythmic form disciplines wandering thought.',
+    focus:'The line as an embodied unit of breath: testing language under maximum pressure and minimal ornament.',
     items:[
-      ['Studying','Prosody — meter, stress, breath','#/poetry/prosody'],
-      ['Working','The no-adjective sequence','#/atelier/poems'],
-      ['Question','Why write, when the thinking already happens?','#/poetry'],
-      ['Practice','Style studies — imitation as a way of touching how it is built','#/poetry'],
-      ['Bearing','Read like a writer — with the ear and the pulse','#/poetry']
+      ['Studying','Prosody — meter, stress, breath, and the physics of the spoken line','#/poetry/prosody'],
+      ['Working','The no-adjective sequence — poems cut down to bare noun and verb','#/atelier/poems'],
+      ['Question','Why write, when the thinking already happens? The friction of the letter','#/poetry'],
+      ['Practice','Style studies — imitation as a way of touching how masters built tone','#/poetry'],
+      ['Bearing','Read like a writer — with the ear, the pulse, and the breath','#/poetry']
     ]
   },
   { id:'copywriting', num:'07', nav:'Copywriting', title:'Copywriting', group:'wordpage',
     kicker:'Persuasion with the record left open on the table. Applied rhetoric, studied as a craft of the heart — moving a person, and still able to look at the sentence afterward.',
+    desc:'Rhetoric tested against the real world. A critical study of persuasive prose, classic direct-response principles (Ogilvy, Hopkins, Caples), headline dynamics, and the ethics of commercial communication. Exploring how to move a reader toward genuine action without manipulating or bruising their trust.',
+    focus:'Ethical persuasion: the craft of opening a reader’s mind rather than forcing their hand.',
     items:[
-      ['Building','The swipe file — annotated','#/copywriting/swipe-file'],
-      ['Lineage','Aristotle — rhetoric, the classical spine','#/philosophy'],
-      ['Craft','Compression: every word asked to carry weight or let go','#/copywriting'],
-      ['Study','Ogilvy — the Rolls-Royce ad','#/copywriting/swipe-file'],
+      ['Building','The swipe file — annotated with rhetorical structures and hooks','#/copywriting/swipe-file'],
+      ['Lineage','Aristotle — rhetoric: ethos, pathos, logos as the classical spine','#/philosophy'],
+      ['Craft','Compression: every word asked to carry weight or be excised without mercy','#/copywriting'],
+      ['Study','Ogilvy — the Rolls-Royce ad: 60 mph and the electric clock','#/copywriting/swipe-file'],
       ['Ethic','Moving without bruising — the hand that opens, not the one that pushes','#/copywriting']
     ]
   },
   { id:'atelier', num:'08', nav:'Atelier', title:'Atelier', group:'wordpage',
     kicker:'Where the reading turns into making: fiction, fragments, and forms that push back. The room where the work is made badly first, and then made again.',
+    desc:'The personal studio and workshop for speculative fiction, prose poetry, experimental narratives, and cartographic sketches. Here, theoretical concepts from philosophy and geometry are converted into tangible narratives, character studies, and tactile manuscripts.',
+    focus:'Whole before beautiful: the discipline of producing finished first drafts before indulging in decorative polish.',
     items:[
-      ['Fiction','The Cartographer of Impossible Maps','#/atelier/cartographer'],
-      ['Poetry','A small ongoing sequence','#/atelier/poems'],
+      ['Fiction','The Cartographer of Impossible Maps — a speculative short novella','#/atelier/cartographer'],
+      ['Poetry','A small ongoing sequence on stone, bronze, and coastal light','#/atelier/poems'],
       ['Craft','Form, the holding shape, and the page as a machine that teaches','#/atelier'],
-      ['Vow','Finish before polishing — whole before beautiful','#/atelier'],
-      ['Question','Where does the reading come out?','#/atelier']
+      ['Vow','Finish before polishing — whole before beautiful, always','#/atelier'],
+      ['Question','Where does the reading come out? Transforming study into made objects','#/atelier']
     ]
   },
   { id:'journal', num:'09', nav:'Journal', title:'Journal', group:'wordpage',
     kicker:'Occasional essays and fragments. Long when the thought earns its length, short when it only needs a breath.',
+    desc:'Long-form reflective essays, dated dispatches, and intellectual field notes exploring practical wisdom (phronesis), the psychology of friction, cognitive cartography, and deliberate slowness in an era of automated content generation.',
+    focus:'Writing as thinking: developing arguments at the natural pace of genuine understanding.',
     items:[
-      ['Oct 2026','On Phronesis','#/journal/on-phronesis'],
-      ['Sep 2026','Against Friction','#/journal/against-friction'],
-      ['Aug 2026','The Map and the Territory','#/journal'],
-      ['Jul 2026','Reading Slowly on Purpose','#/journal'],
-      ['Archive','Everything written, in order','#/journal']
+      ['Oct 2026','On Phronesis — why practical wisdom cannot be automated or rushed','#/journal/on-phronesis'],
+      ['Sep 2026','Against Friction — defending constructive difficulty in craft and learning','#/journal/against-friction'],
+      ['Aug 2026','The Map and the Territory — Korzybski, Borges, and modern cognitive distortion','#/journal'],
+      ['Jul 2026','Reading Slowly on Purpose — an apology for deep, non-extractive reading','#/journal'],
+      ['Archive','Everything written, in order — permanent records of revisions and drafts','#/journal']
     ]
   },
   { id:'design', num:'10', nav:'Design', title:'Graphic Design', group:'imagetime',
     kicker:'Visual rhetoric: grids, type, and the case a layout makes to the eye before a single word is read. The page speaking at the speed of the eye.',
+    desc:'Typographic hierarchy, grid systems (Müller-Brockmann, Bringhurst), Filipino sign-painting traditions, and editorial layout. Examining how white space, line height, contrast, and font weight establish credibility and emotional tone long before semantic reading begins.',
+    focus:'Visual rhetoric: layout as an immediate ethical argument made to the human eye.',
     items:[
-      ['Reading','Bringhurst — Typographic Style','#/design'],
-      ['Studying','The Swiss grid','#/design/grid-systems'],
-      ['Working','This site as specimen','#/about'],
-      ['Exercise','One poster per Journal essay','#/journal/on-phronesis'],
+      ['Reading','Bringhurst — The Elements of Typographic Style: geometry and cadence','#/design'],
+      ['Studying','The Swiss grid — modular systems of spatial proportion and clarity','#/design/grid-systems'],
+      ['Working','This site as specimen — hand-rolled CSS, Cubao display type, and sign palettes','#/about'],
+      ['Exercise','One poster per Journal essay — graphic distillations of long-form thought','#/journal/on-phronesis'],
       ['Bearing','Hierarchy is ethos — what the page honors first, it honors most','#/design']
     ]
   },
   { id:'drawing', num:'11', nav:'Drawing', title:'Drawing', group:'imagetime',
     kicker:'Slowed looking. The hand as an instrument of attention — the eye and the hand agreeing in real time, and the line as the commitment.',
+    desc:'The practice of observational drawing as an epistemic tool. Following Ruskin’s dictum that drawing teaches one to see rather than merely recognize, this shelf catalogs daily sketchbook studies of anatomy, drapery, foliage, and structural volumes in graphite and conté crayon.',
+    focus:'Overcoming symbol bias: forcing the hand to record what the eye actually observes rather than what the brain presumes.',
     items:[
-      ['Daily','The sketchbook — dated, uncurated','#/drawing/sketchbook'],
-      ['Craft','Construction before contour — the form beneath the form','#/drawing'],
-      ['Source','Ruskin — The Elements of Drawing','#/drawing'],
-      ['Study','Hands, five days of them','#/drawing/sketchbook'],
-      ['Fight','Against symbols — the long fight to see what is actually there','#/drawing']
+      ['Daily','The sketchbook — dated, uncurated studies in pencil, ink, and conté','#/drawing/sketchbook'],
+      ['Craft','Construction before contour — finding the underlying geometric armature','#/drawing'],
+      ['Source','Ruskin — The Elements of Drawing: attention as a spiritual exercise','#/drawing'],
+      ['Study','Hands, five days of them: articulating knuckle joints and tendon planes','#/drawing/sketchbook'],
+      ['Fight','Against symbols — the long fight to see what is actually there in space','#/drawing']
     ]
   },
   { id:'video', num:'12', nav:'Video', title:'Video Editing', group:'imagetime',
     kicker:'Time as a material. The essay with a pulse — the cut as punctuation, the pacing as the breath of a proof.',
+    desc:'Video editing and essayistic filmmaking: exploring the montage techniques of Chris Marker, Jean-Luc Godard, and Walter Murch. Investigating how temporal pacing, jump cuts, visual rhythm, and sound design function as rhetorical arguments in moving image essays.',
+    focus:'Editing as temporal sculpting: how the placement of a cut shapes human empathy and retention.',
     items:[
-      ['Planning','Essay film — The Aesthetics of Proof','#/video/essay-film'],
+      ['Planning','Essay film — The Aesthetics of Proof: animating Euclidean demonstrations','#/video/essay-film'],
       ['Craft','The cut as punctuation — a hard cut a full stop, a dissolve a comma','#/video'],
-      ['Study','Godard · Marker · Murch','#/video'],
-      ['Plan','A process film on lost-wax casting','#/jewelry/casting-methods'],
-      ['Bearing','Rhythm before content — the pacing carries it, then the words do','#/video']
+      ['Study','Godard · Marker · Murch: Soviet montage meeting French New Wave rhythm','#/video'],
+      ['Plan','A process film on lost-wax casting — molten metal captured at 120fps','#/jewelry/casting-methods'],
+      ['Bearing','Rhythm before content — the pacing carries the room, then words do','#/video']
     ]
   },
   { id:'modeling', num:'13', nav:'3D', title:'3D Modeling', group:'imagetime',
     kicker:'Thinking in volumes. Geometry with its gloves off — forms you can hold and turn, forms that want to be walked around.',
+    desc:'Spatial thinking in three dimensions: polygonal topology, surface subdivision, hard-surface modeling, and parametric generation. Investigating the mathematical beauty of polyhedra and the tactile craft of building digital forms with clean, intentional edge loops.',
+    focus:'Topology as grammar: why quad-based edge flow is the syntax of sculptural flexibility.',
     items:[
-      ['Building','The impossible coastline','#/modeling/impossible-coastline'],
-      ['Studying','The Platonic solids, by hand','#/mathematics'],
-      ['Tool','Blender, slowly','#/modeling'],
-      ['Note','Why quads — topology is a language; quads are its grammar','#/modeling'],
-      ['Scene','A room with the lamp in it','#/modeling']
+      ['Building','The impossible coastline — fractal geometry in high-density meshes','#/modeling/impossible-coastline'],
+      ['Studying','The Platonic solids, by hand: dualities, dihedral angles, and vertices','#/mathematics'],
+      ['Tool','Blender, slowly — mastering shortcuts, procedural shaders, and lighting','#/modeling'],
+      ['Note','Why quads — topology is a language; clean edge loops are its syntax','#/modeling'],
+      ['Scene','A room with the lamp in it — raytraced shadows and indirect bouncing light','#/modeling']
     ]
   },
   { id:'games', num:'14', nav:'Games', title:'Game Development', group:'handobject',
     kicker:'Games as thought experiments you can walk around inside. Where the logic and the fiction share a room, and keep each other warm.',
+    desc:'Ludology and game systems design: investigating mechanics as metaphor, procedural rhetoric, state machines, and interactive storytelling. How systemic constraints, player agency, and win conditions reflect philosophical worldviews.',
+    focus:'Mechanics as meaning: how the actions a game incentivizes define its underlying moral philosophy.',
     items:[
-      ['Designing','The Forking Path — a design document','#/games/forking-paths'],
-      ['Studying','Mechanics as meaning — what the game permits is what it loves','#/games'],
-      ['Lineage','Borges — the garden as game','#/literature/labyrinths'],
-      ['Note','The rules are the ethics — a win condition is a temperament','#/games'],
-      ['Puzzle','Z/12Z as a lock','#/mathematics/number-theory']
+      ['Designing','The Forking Path — a design document for a branching philosophical roguelike','#/games/forking-paths'],
+      ['Studying','Mechanics as meaning — what the game permits is what the game loves','#/games'],
+      ['Lineage','Borges — the garden as game: navigating infinite temporal labyrinths','#/literature/labyrinths'],
+      ['Note','The rules are the ethics — a win condition is a temperament in code','#/games'],
+      ['Puzzle','Z/12Z as a lock: modular arithmetic embedded in ancient dungeon doors','#/mathematics/number-theory']
     ]
   },
   { id:'programming', num:'15', nav:'Programming', title:'Programming & Computer Science', group:'handobject',
     kicker:'The machine as a second body of the thought — programs that reason, and the discipline of speaking in systems that hold.',
+    desc:'Software craftsmanship, functional programming, data structures, and Unix philosophy. Treating code not as disposable commodity but as an enduring craft of logical specification, where minimalism, deterministic purity, and zero external baggage produce resilient systems.',
+    focus:'Speaking in systems: the intellectual rigor of writing programs whose correctness can be verified from first principles.',
     items:[
-      ['Building','This site, hand-rolled — HTML, CSS, and the data held as plain text','#/programming'],
-      ['Studying','Algorithms and data structures, worked slowly and by hand','#/programming'],
-      ['Lineage','Lambda, Turing, and the machines that think in symbols','#/programming'],
-      ['Question','What does a program know that its author does not?','#/programming'],
-      ['Notebook','The command line, the editor, and the small tools that compose','#/programming']
+      ['Building','This site, hand-rolled — vanilla HTML, CSS, and plain data without build baggage','#/programming'],
+      ['Studying','Algorithms and data structures, worked slowly on paper and in code','#/programming'],
+      ['Lineage','Lambda calculus, Turing machines, and the origins of symbolic thought','#/programming'],
+      ['Question','What does a program know that its author does not? Emergence in loops','#/programming'],
+      ['Notebook','The command line, the editor, and the small sharp tools that compose cleanly','#/programming']
     ]
   },
   { id:'clothes', num:'16', nav:'Clothes', title:'Making Clothes', group:'handobject',
     kicker:'Pattern as geometry worn against the skin. The body as the first holding shape — and the deepest meeting of cloth and curve.',
+    desc:'Sartorial craft, two-dimensional flat pattern drafting, drape analysis, and hand-sewn construction. Understanding how flat planes of woven fiber are engineered via darts, pleats, and biases to accommodate the complex three-dimensional curves of the living human body.',
+    focus:'Pattern drafting as applied topology: turning flat textiles into habitable architectural envelopes.',
     items:[
-      ['Studying','Pattern drafting — the body in geometry','#/clothes/pattern-drafting'],
-      ['Making','First shirt, slowly','#/clothes'],
-      ['Repair','Mending before making','#/clothes'],
-      ['Note','Why darts are triangles — flat cloth, made to hold a curve','#/clothes/pattern-drafting'],
-      ['Vow','Learn the why of every seam — where intention becomes irreversible','#/clothes']
+      ['Studying','Pattern drafting — the living human body translated into Euclidean paper curves','#/clothes/pattern-drafting'],
+      ['Making','First shirt, slowly: french seams, felled armholes, and collar stand fitting','#/clothes'],
+      ['Repair','Mending before making: sashiko stitching and structural reinforcement','#/clothes'],
+      ['Note','Why darts are triangles: folding planar cloth to contour volumetric curves','#/clothes/pattern-drafting'],
+      ['Vow','Learn the why of every seam — where intention becomes irreversible in thread','#/clothes']
     ]
   },
   { id:'jewelry', num:'17', nav:'Jewelry', title:'Making Jewelry', group:'handobject',
     kicker:'The miniature. Metal with a memory — every hammer mark and file stroke kept, and the void that holds the shape of the idea.',
+    desc:'Metalsmithing at the scale of the finger: lost-wax investment casting, sprue engineering, bezel setting, and metallurgical behavior. Exploring how molten bronze, silver, and gold fill voids under centrifugal and vacuum force, freezing intentional form into permanent metal.',
+    focus:'The void that remembers: the discipline of carving wax with the foresight of how molten metal flows and solidifies.',
     items:[
-      ['Studying','Casting methods, compared','#/jewelry/casting-methods'],
-      ['Making','First flask — lost wax','#/jewelry/casting-methods'],
-      ['Question','What does a mold know that the object forgets?','#/jewelry'],
-      ['Note','Why the sprues branch — the metal must arrive everywhere at once','#/jewelry'],
-      ['Vow','Patience at every temperature — the first is respect','#/jewelry']
+      ['Studying','Casting methods compared: gravity vs vacuum assist vs centrifugal sling','#/jewelry/casting-methods'],
+      ['Making','First flask in lost wax: carving jewelers carving wax with dental burrs','#/jewelry/casting-methods'],
+      ['Question','What does a mold know that the finished object forgets? The negative void','#/jewelry'],
+      ['Note','Why sprues must branch: thermal dynamics and preventing shrinkage porosity','#/jewelry'],
+      ['Vow','Patience at every temperature — respect for the torch and molten crucible','#/jewelry']
     ]
   },
   { id:'about', num:'18', nav:'About', title:'About', group:'record',
     kicker:'Tyler Aragon Miranda. Independent student of philosophy, mathematics, literature — and the crafts. This site is the ledger: a life kept in the open, revised as it goes.',
+    desc:'The intellectual biography, colophon, and manifesto of Tyler Aragon Miranda. An account of self-directed polymathic study across classical humanities and physical crafts, explaining the architecture of meresophist.xyz, the Cubao Free typography, and the ethical commitment to living in the open.',
+    focus:'Polymathic devotion: breaking the artificial silos between intellectual analysis and physical craft.',
     items:[
-      ['Contact','tyler@meresophist.xyz',null],
-      ['Elsewhere','Are.na · GitHub · Letterboxd',null],
-      ['Design','Five palettes, one meander','#/about'],
-      ['Colophon','Instrument Serif & Courier Prime',null],
-      ['The name','Meresophist, explained','#/about']
+      ['Contact','tyler@meresophist.xyz — open correspondence on ideas and craft',null],
+      ['Elsewhere','Are.na · GitHub · Letterboxd — digital outposts and visual research',null],
+      ['Design','Six signmaking palettes, one meander, and zero external build steps','#/about'],
+      ['Colophon','Instrument Serif, Courier Prime, Pinyon Script & Cubao Free',null],
+      ['The name','Meresophist explained: the willing student who claims no wisdom','#/about']
     ]
   },
   { id:'psychology', num:'19', nav:'Psychology', title:'Psychology & the Sacred', group:'letters',
     kicker:'The psyche and the depths — analytical psychology, mysticism, and the shaman\u2019s map of the inner world.',
+    desc:'Depth psychology and comparative religion: Carl Jung’s archetypal unconscious, active imagination, the alchemical mysterium coniunctionis, and precolonial Philippine babaylan shamanic cosmologies. Mapping the non-rational structures that organize human dream, myth, and individuation.',
+    focus:'The dialogue with the unconscious: navigating symbolic imagery without succumbing to ego inflation.',
     items:[
-      ['Jung','Analytical psychology — the collective unconscious and individuation','#/psychology/jung'],
-      ['Mysticism','The via negativa — a knowing that is not a proposition','#/psychology/mysticism'],
-      ['Shamanism','Ecstasy as technique — the axis mundi and the soul\u2019s flight','#/psychology/shamanism'],
-      ['Question','What does the psyche know that the ego cannot say?','#/psychology'],
-      ['Lineage','Jung · Eliade · Eckhart · the babaylan','#/psychology']
+      ['Jung','Analytical psychology — the collective unconscious, shadow, and individuation','#/psychology/jung'],
+      ['Mysticism','The via negativa — Meister Eckhart and knowing that is not a proposition','#/psychology/mysticism'],
+      ['Shamanism','Ecstasy as technique — the axis mundi and the soul’s trance flight','#/psychology/shamanism'],
+      ['Question','What does the psyche know that the conscious ego cannot formulate?','#/psychology'],
+      ['Lineage','Jung · Eliade · Eckhart · the babaylan: cross-cultural cartographies of mind','#/psychology']
     ]
   },
   { id:'neurotech', num:'20', nav:'Neurotech', title:'Signal & Mind', group:'handobject',
     kicker:'The brain read as a signal — electroencephalography, brain-computer interfaces, and the analog machines that computed by hand.',
+    desc:'The frontier where neural electrophysiology meets computational hardware: Hans Berger’s pioneer 1924 EEG recordings, frequency decomposition (alpha, theta, gamma), non-invasive BCI decoders, analog ball-and-disc integrators, and humanoid robotics.',
+    focus:'Translating inner thought into external machine action: the epistemological boundary between mind and instrument.',
     items:[
-      ['EEG','Hans Berger\u2019s 1924 recording — the brain\u2019s electric weather','#/neurotech/eeg'],
-      ['Interface','Brain-computer interfaces — thought, translated into action','#/neurotech/brain-computer-interface'],
-      ['Analog','The manual integrator — computing by wheel and disc','#/neurotech/analog-computer'],
-      ['Question','What can the mind say to a machine, and what can it not?','#/neurotech'],
-      ['Robot','Humanoid robots — the body made to walk and work','#/neurotech/humanoid-robots']
+      ['EEG','Hans Berger’s 1924 recording — the brain’s electric rhythms transcribed on paper','#/neurotech/eeg'],
+      ['Interface','Brain-computer interfaces — decoding motor intentions into robotic action','#/neurotech/brain-computer-interface'],
+      ['Analog','The manual integrator — computing differentials by physical wheel and disc rotation','#/neurotech/analog-computer'],
+      ['Question','What can the human mind say to a machine, and what remains untranslatable?','#/neurotech'],
+      ['Robot','Humanoid robots — engineering balance, inverse kinematics, and bipedal gait','#/neurotech/humanoid-robots']
     ]
   },
   { id:'metalwork', num:'21', nav:'Metalwork', title:'Metal, Fire & Skin', group:'handobject',
     kicker:'The made thing in metal and ink — Renaissance armor, precolonial Philippine gold, and the marks worn on the skin.',
+    desc:'The historical anthropology of bodily ornamentation and defense: Milanese master armorers Filippo and Francesco Negroli, precolonial Philippine beaten gold funerary masks (Oton), the Boxer Codex accounts of Pintados warriors, and Kalinga batok tattooing traditions.',
+    focus:'The marked body as living archive: metal and ink as protective shields and repositories of ancestral memory.',
     items:[
-      ['Armory','The Negroli of Milan — parade armor, damascened and raised','#/metalwork/armory'],
-      ['Gold','Precolonial Philippine gold — the Oton mask and lost-wax casting','#/metalwork/philippine-gold'],
-      ['Tattoo','Batok — the pintados, Apo Whang-Od, and the marks that remember','#/metalwork/philippine-tattoo'],
-      ['Question','What does the hand remember that the archive forgets?','#/metalwork'],
-      ['Lineage','Negroli · the Boxer Codex · the babaylan\u2019s ink','#/metalwork']
+      ['Armory','The Negroli of Milan — parade armor, repoussé damascened in gold and steel','#/metalwork/armory'],
+      ['Gold','Precolonial Philippine gold — the Oton burial mask and lost-wax filigree beads','#/metalwork/philippine-gold'],
+      ['Tattoo','Batok — the Pintados, Apo Whang-Od, and the soot marks that remember lineage','#/metalwork/philippine-tattoo'],
+      ['Question','What does the crafting hand remember that written archives forget?','#/metalwork'],
+      ['Lineage','Negroli damascening · the Boxer Codex · the babaylan’s sacred ink','#/metalwork']
     ]
   }
 ];
@@ -243,7 +285,7 @@ const PAGES = {
 tabularium:{
   num:'02', title:'Tabularium',
   kicker:'A public record of what I am thinking with right now — the books on the desk, the drafts breathing in the folder, the questions still warm.',
-  meta:[['Revised','09 October 2026'],['Active entries','18'],['Cadence','Weekly-ish, in the open']],
+  meta:[['Revised','09 October 2026'],['Cadence','Weekly-ish, in the open']],
   blocks:[
     {h:'What this room is'},
     {p:`A tabularium was the archive where Rome kept its public record — the laws, the treaties, the deeds of the state, all of it dated and held in the open. Mine is smaller and far less consequential, and that is the point. It holds what I am reading, writing, making and turning over right now — kept in the open so the work has a spine, a date, and a reader who might find it. What Rome did for an empire, I do for one desk.`},
@@ -264,7 +306,7 @@ tabularium:{
     {h:'01 · Letters'},
     {log:[
       {d:'Oct 2026', t:'Aristotle — Nicomachean Ethics', x:'Philosophy · Reading · Book VI, on phronesis — practical wisdom, and why it cannot be taught like geometry', r:'#/philosophy/aristotle'},
-      {d:'Oct 2026', t:'The Ethics of Digital Identity', x:'Philosophy · Writing · a draft of ~2,400 words, still finding its body', r:'#/philosophy/digital-identity'},
+      {d:'Oct 2026', t:'The Ethics of Digital Identity', x:'Philosophy · Writing · a draft, still finding its body', r:'#/philosophy/digital-identity'},
       {d:'Oct 2026', t:'Borges — Labyrinths', x:'Literature · Reading · infinity, mirrors, paradox — the library as a universe', r:'#/literature/labyrinths'},
       {d:'Sep 2026', t:'Wallace — Infinite Jest (reread)', x:'Literature · Reading · addiction, entertainment, and the ethics of wanting', r:'#/literature/infinite-jest'},
       {d:'Sep 2026', t:'Number Theory — Hardy & Wright', x:'Mathematics · Studying · ch. 3, congruences — arithmetic in a different ring', r:'#/mathematics/number-theory'},
@@ -343,7 +385,7 @@ philosophy:{
     'digital-identity':{
       title:'The Ethics of Digital Identity',
       kicker:'A draft essay on selves, profiles, and the morality of curation.',
-      meta:[['Form','Essay'],['Status','Draft — ~2,400 words'],['Started','August 2026'],['Target','Journal, Q1 2027']],
+      meta:[['Form','Essay'],['Status','Draft'],['Started','August 2026'],['Target','Journal, Q1 2027']],
       blocks:[
         {h:'Thesis, provisionally'},
         {p:`We are told that a curated profile is a false self — a performance that hides the real one. I want to argue the opposite, or at least something more uncomfortable: that curation is not a betrayal of identity but one of its ordinary modes, and that the genuine ethical problem is not authenticity but the asymmetry of who gets to curate whom.`},
@@ -1321,7 +1363,6 @@ copywriting: {
       title: 'The Swipe File',
       kicker: 'A museum of sentences that worked — annotated until they give up their method.',
       meta: [
-        ['Count', '41 entries'],
         ['Cadence', 'Weekly additions'],
         ['Rule', 'Annotate, imitate, then argue']
       ],
@@ -1506,7 +1547,7 @@ video: {
     'essay-film':{
       title:'Essay Film — The Aesthetics of Proof',
       kicker:'Four proofs, each given a different rhythm. Storyboarding now.',
-      meta:[['Form','Short essay film'],['Status','Storyboard'],['Length','Target: 6–8 minutes'],['Source','The Aesthetics of Proof']],
+      meta:[['Form','Short essay film'],['Status','Storyboard'],['Source','The Aesthetics of Proof']],
       blocks:[
         {h:'The structure'},
         {p:`Four proofs, four rhythms — Euclid IX.20 cut slow and ceremonial, the oldest argument in the film; the diagonal argument cut fast, almost impatient, the way it actually feels; the fundamental theorem of arithmetic given the rhythm of a counting song; and a fourth, undecided, to break the pattern the film has taught the viewer to expect.`},
@@ -1681,7 +1722,7 @@ atelier:{
     cartographer:{
       title:'The Cartographer of Impossible Maps',
       kicker:'A short story in second draft. A mapmaker whose maps are accurate to places that do not exist.',
-      meta:[['Form','Short fiction'],['Status','Draft 2'],['Length','~4,800 words'],['Started','June 2026']],
+      meta:[['Form','Short fiction'],['Status','Draft 2'],['Started','June 2026']],
       blocks:[
         {h:'Premise'},
         {p:`A cartographer is commissioned to survey a coastline that appears on no other map. He surveys it, accurately, and returns to find that the coastline no longer exists — but his map does, and it is correct. The story is about what it means for a representation to be true of nothing.`},
@@ -1698,7 +1739,7 @@ atelier:{
     poems:{
       title:'A Small Sequence',
       kicker:'Fourteen lines each, no adjectives. A constraint chosen to find out what is left.',
-      meta:[['Form','Constraint'],['Count','7 of 12 complete'],['Rule','No adjectives']],
+      meta:[['Form','Constraint'],['Rule','No adjectives']],
       blocks:[
         {h:'The constraint'},
         {p:`No adjectives. It began as an exercise and turned into a test: how much of what I want to say depends on evaluation rather than observation? More than I would like.`},
@@ -1716,7 +1757,7 @@ atelier:{
 journal:{
   num:'18', title:'Journal',
   kicker:'Occasional essays and fragments. Long-form when it earns it, short when it does not.',
-  meta:[['Entries','11'],['Latest','Oct 2026'],['Cadence','Irregular']],
+  meta:[['Latest','Oct 2026'],['Cadence','Irregular']],
   blocks:[
     {h:'Recent'},
     {log:[
@@ -1733,7 +1774,7 @@ journal:{
     'on-phronesis':{
       title:'On Phronesis',
       kicker:'Why the most important thing in Aristotle\u2019s ethics is the one thing he says cannot be taught.',
-      meta:[['Date','October 2026'],['Form','Essay'],['Reading time','6 minutes']],
+      meta:[['Date','October 2026'],['Form','Essay']],
       blocks:[
         {h:'The problem stated plainly'},
         {p:`Aristotle builds an ethics on practical wisdom, and then tells us that practical wisdom requires experience of particulars, and that therefore the young cannot have it. This is not a footnote. It is a structural admission that the theory cannot be learned from the theory.`},
@@ -1749,7 +1790,7 @@ journal:{
     'against-friction':{
       title:'Against Friction',
       kicker:'On the aesthetics of interfaces, and why difficulty is sometimes the point.',
-      meta:[['Date','September 2026'],['Form','Note'],['Reading time','3 minutes']],
+      meta:[['Date','September 2026'],['Form','Note']],
       blocks:[
         {h:'The default'},
         {p:`Every design conversation eventually arrives at the same destination: remove friction. Fewer clicks, fewer choices, less thinking. This is right most of the time. It is wrong often enough that it deserves an argument against it.`},
